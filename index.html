@@ -13,9 +13,10 @@
 <body>
     <header>
         <nav class="shadow-3">
-            <button class="button-icon-filled ripple-center ripple-white" onclick="darkmode(), darkmodeBtn(this.firstElementChild)">
+            <button class="button-icon-filled ripple-center ripple-white tooltip" onclick="darkmode(), darkmodeBtn(this.firstElementChild)">
                 <span class="material-icons" style="font-size: 30px; padding: 5px; color: #ffffff;">brightness_medium</span>
                 <span class="ripple-box"></span>
+                <span class="tooltip-txt tooltip-bottom">Change color theme</span>
             </button>          
         </nav>
     </header>
@@ -514,11 +515,11 @@
         <div class="flex-column">
             <h1 class="h3-txt">Tooltips</h1>
             <p class="tooltip">tooltip
-                <span class="tooltip-txt">I like this I like this I like this</span>
+                <span class="tooltip-txt tooltip-top">I like this I like this I like this</span>
             </p>
             <button class="button-none ripple ripple-blue tooltip">Button
                 <span class="ripple-box"></span>
-                <span class="tooltip-txt tooltip-arrow">Button tooltip with arrow</span>
+                <span class="tooltip-txt tooltip-top tooltip-arrow">Button tooltip with arrow</span>
             </button>
         </div>
         <div class="flex-column">

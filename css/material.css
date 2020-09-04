@@ -45,7 +45,7 @@ body{
     font-family: 'Roboto', sans-serif;
     color: var(--color);
     margin: 0;
-    transition: 150ms;
+    transition: background-color 150ms, color 150ms;
 }
 nav{
     display: flex;
@@ -1295,9 +1295,6 @@ Simple sliding aniamtion
 .tooltip-txt{
     position: absolute;
     z-index: 1000;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.75);
     background-color: var(--tooltipBG);
     color: #ffffff;
     padding: 7px 10px;
@@ -1315,9 +1312,39 @@ Simple sliding aniamtion
     opacity: 0;
     transition: 150ms ease-in-out;
 }
-.tooltip:hover > .tooltip-txt{
+.tooltip-top{
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+}
+.tooltip-bottom{
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+}
+.tooltip-left{
+    top: 50%;
+    right: 120%;
+    transform: translateY(-50%) scale(0.75);
+}
+.tooltip-right{
+    top: 50%;
+    left: 120%;
+    transform: translateY(-50%) scale(0.75);
+}
+.tooltip:hover > .tooltip-bottom, .tooltip-top{
     visibility: visible;
     transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+.tooltip:hover > .tooltip-left{
+    visibility: visible;
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+.tooltip:hover > .tooltip-right{
+    visibility: visible;
+    transform: translateY(-50%) scale(1);
     opacity: 1;
 }
 .tooltip-arrow::before{
