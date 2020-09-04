@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/material.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="shadow-3">
+            <button class="button-box ripple ripple-white" onclick="darkmode()">Darkmode
+                <span class="ripple-box"></span>
+            </button>            
+        </nav>
+    </header>
+    <main>
+        <div class="flex-column">
+            <h1 class="h3-txt">Inputs</h1>
+            <div class="flex-center">
+                <div class="input-underline-box margin-5">
+                    <input class="input-underline" type="text" id="input3" placeholder="placeholder" title="" required/>
+                    <label for="input3">Underline</label>
+                </div>
+                <div class="input-outline-box margin-5">
+                    <input class="input-outline" type="text" id="input1" placeholder="placeholder" title="" required/>
+                    <label for="input1">Outlined</label>
+                </div>
+                <div class="input-filled-box margin-5">
+                    <input class="input-filled" type="text" id="input2" placeholder="placeholder" title="" required/>
+                    <label for="input2">Filled</label>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Buttons</h1>
+            <div class="flex-center">
+                <div>
+                    <button class="button-none margin-5">None</button>
+                </div>
+                <div>
+                    <button class="button-outline margin-5">Outline</button>
+                </div>
+                <div>
+                    <button class="button-box margin-5">Box</button>
+                </div>
+            </div>
+            <div class="flex-center">
+                <div>
+                    <button class="button-none-slim margin-5">None</button>
+                </div>
+                <div>
+                    <button class="button-outline-slim margin-5">Outline</button>
+                </div>
+                <div>
+                    <button class="button-box-slim margin-5">Box</button>
+                </div>
+            </div>
+            <div class="flex-center">
+                <button class="button-icon ripple-center ripple-black">
+                    <span class="material-icons">more_vert</span>
+                    <span class="ripple-box"></span>
+                </button>
+                <button class="button-icon-filled ripple-center ripple-black">
+                    <span class="material-icons">more_vert</span>
+                    <span class="ripple-box"></span>
+                </button>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Menu</h1>
+            <div class="flex-center">
+                <div class="menu">
+                    <button class="menu-btn button-icon ripple-center ripple-black">
+                        <span class="material-icons">more_vert</span>
+                        <span class="ripple-box"></span>
+                    </button>
+                    <div class="menu-box shadow-3">
+                        <button onclick="closeMenu(this)">test</button>
+                        <button onclick="closeMenu(this)">test</button>
+                    </div>
+                </div>
+                <div class="menu">
+                    <button class="menu-btn button-none ripple ripple-blue">Button
+                        <span class="ripple-box"></span>
+                    </button>
+                    <div class="menu-box shadow-3">
+                        <button onclick="closeMenu(this)" class="ripple ripple-black">test2
+                            <span class="ripple-box"></span>
+                        </button>
+                        <button onclick="closeMenu(this)" class="ripple ripple-black">test2
+                            <span class="ripple-box"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <h1 class="h3-txt">Menu on top</h1>
+            <div class="menu">
+                <button class="menu-btn menu-ontop button-none ripple ripple-blue">Button
+                    <span class="ripple-box"></span>
+                </button>
+                <div class="menu-box shadow-3">
+                    <button class="ripple ripple-black">menu on top
+                        <span class="ripple-box"></span>
+                    </button>
+                    <button onclick="closeMenu(this)" class="ripple ripple-black">close
+                        <span class="ripple-box"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Drawer</h1>
+            <button class="button-box ripple ripple-white" onclick="drawerHandler('#drawer1')">Toggle drawer
+                <span class="ripple-box"></span>
+            </button>
+            <div class="drawer" id="drawer1">
+                <div class="drawer-content">
+                    <div class="flex-column">
+                        <div class="menu">
+                            <button class="menu-btn button-none ripple ripple-blue">Menu
+                                <span class="ripple-box"></span>
+                            </button>
+                            <div class="menu-box shadow-3">
+                                <button onclick="closeMenu(this), drawerHandler('#drawer1')" class="ripple ripple-black">Close drawer
+                                    <span class="ripple-box"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Select</h1>
+            <div class="flex-center">
+                <div class="select">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Date / time</h1>
+            <div class="flex-center">
+                <div class="date-selector">
+                    <div class="input-underline-box margin-5">
+                        <input class="input-underline" type="text" id="input10" placeholder="1 aug 2020" title="" required/>
+                        <label for="input10">Pick a date</label>
+                        <div class="select-date-box ripple-center ripple-black">
+                            <span class="material-icons">insert_invitation</span>
+                            <span class="ripple-box"></span>
+                        </div>
+                    </div>
+                    <div class="calendar-box">
+                        <div class="calendar-header">
+                            <button class="button-icon-filled ripple-center ripple-black calendar-previous">
+                                <span class="material-icons">chevron_left</span>
+                                <span class="ripple-box"></span>
+                            </button>
+                            <div class="menu">
+                                <button id="calendar-header" class="ripple ripple-black calendar-year-button menu-btn">
+                                    <span class="ripple-box"></span>
+                                </button>
+                                <div class="menu-box shadow-3 calendar-year-menu">
+                                    <button onclick="closeMenu(this)" class="ripple ripple-black calendar-previous-year">previous year
+                                        <span class="ripple-box"></span>
+                                    </button>
+                                    <button onclick="closeMenu(this)" class="ripple ripple-black">this year
+                                        <span class="ripple-box"></span>
+                                    </button>
+                                    <button onclick="closeMenu(this)" class="ripple ripple-black calendar-next-year">next year
+                                        <span class="ripple-box"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="button-icon-filled ripple-center ripple-black calendar-next">
+                                <span class="material-icons">chevron_right</span>
+                                <span class="ripple-box"></span>
+                            </button>
+                        </div>
+                        <div class="calendar-days">
+                            <span>Su</span>
+                            <span>Mo</span>
+                            <span>Tu</span>
+                            <span>We</span>
+                            <span>Th</span>
+                            <span>Fr</span>
+                            <span>Sa</span>
+                        </div>
+                        <div class="calendar-numbers">
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-black">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="calendar-years">
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                            <button class="calendar-dropdown-year-button ripple">2000
+                                <span class="ripple-box"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Shadows</h1>
+            <div class="flex-center">
+                <div class="shadow-0 margin-5 padding-5">
+                    shadow-0
+                </div>
+                <div class="shadow-1 margin-5 padding-5">
+                    shadow-1
+                </div>
+                <div class="shadow-2 margin-5 padding-5">
+                    shadow-2
+                </div>
+                <div class="shadow-3 margin-5 padding-5">
+                    shadow-3
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Dark Colors</h1>
+            <div class="flex-column">
+                <div class="c121212">#121212</div>
+                <div class="c242424">#242424</div>
+                <div class="c363636">#363636</div>
+                <div class="c484848">#484848</div>
+                <div class="c606060">#606060</div>
+                <div class="c727272">#727272</div>
+                <div class="c848484">#848484</div>
+                <div class="c969696">#969696</div>
+            </div>
+            <h1 class="h3-txt">Light Colors</h1>
+            <div class="flex-column">
+                <div class="c212121">#212121</div>
+                <div class="c424242">#424242</div>
+                <div class="c616161">#616161</div>
+                <div class="c757575">#757575</div>
+                <div class="c9e9e9e">#9e9e9e</div>
+                <div class="cbdbdbd">#bdbdbd</div>
+                <div class="ce0e0e0">#e0e0e0</div>
+                <div class="ceeeeee">#eeeeee</div>
+                <div class="cf5f5f5">#f5f5f5</div>
+                <div class="cfafafa">#fafafa</div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Toast</h1>
+            <button class="button-outline" onclick="showToast('This is a toast This is a toast This is a toast')">Show toast</button>
+            <div class="toast shadow-3">
+                <p class="toast-msg"></p>
+                <button class="button-none toast-ok ripple ripple-blue">Ok
+                    <span class="ripple-box"></span>
+                </button>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Ripple effect</h1>
+            <div>
+                <button class="button-outline ripple ripple-blue">Button
+                    <span class="ripple-box"></span>
+                </button>
+            </div>
+        </div>
+        <div>
+            <h1 class="h3-txt">Action button</h1>
+            <div class="action-button-div">
+                <span class="material-icons action-button shadow-3">more_vert</span>
+                <div class="action-child-button-div">
+                    <span class="material-icons action-child-button shadow-3">bookmark</span>
+                    <span class="material-icons action-child-button shadow-3">card_giftcard</span>
+                    <span class="material-icons action-child-button shadow-3">account_circle</span>
+                    <span class="material-icons action-child-button shadow-3">close</span>
+                    <span class="material-icons action-child-button shadow-3">menu</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Example ripple box</h1>
+            <div class="ripple ripple-black shadow-0" style="width: 400px; height: 400px;">
+                <span class="ripple-box"></span>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Card</h1>
+            <div class="card shadow-1">
+                <img src="https://cdn.images.express.co.uk/img/dynamic/109/590x/lizz-1003046.jpg?r=1534219722519" alt="">
+                <div class="card-header">
+                    <h1 class="card-title">Lizard</h1>
+                    <p class="card-subtitle">about lizards</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-content">Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica</p>
+                </div>
+                <hr class="divider-1">
+                <div class="card-footer">
+                    <div class="menu">
+                        <button class="menu-btn button-none-slim ripple ripple-blue">Share
+                            <span class="ripple-box"></span>
+                        </button>
+                        <div class="menu-box shadow-3">
+                            <button onclick="closeMenu(this)">Share 1</button>
+                            <button onclick="closeMenu(this)">Share 2</button>
+                        </div>
+                    </div>
+                    <button class="button-none-slim ripple ripple-blue">like
+                        <span class="ripple-box"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Tabs</h1>
+            <div class="tabs-container">
+                <div class="tabs" id="tabs1">
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab two
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab three
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab four
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab five
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab six
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab seven
+                        <span class="ripple-box"></span>
+                    </a>
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab eight
+                        <span class="ripple-box"></span>
+                    </a>
+                </div>
+                <div class="tab-indicator-container">
+                    <span class="tab-indicator"></span>
+                </div>
+            </div>
+            <div class="tabs-content-container" id="tabs1-content">
+                <div class="tab-1">Tab 1</div>
+                <div class="tab-2">Tab 2</div>
+                <div class="tab-3">Tab 3</div>
+                <div class="tab-4">Tab 4</div>
+                <div class="tab-5">Tab 5</div>
+                <div class="tab-6">Tab 6</div>
+                <div class="tab-7">Tab 7</div>
+                <div class="tab-8">Tab 8</div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Tooltips</h1>
+            <p class="tooltip">tooltip
+                <span class="tooltip-txt">I like this I like this I like this</span>
+            </p>
+            <button class="button-none ripple ripple-blue tooltip">Button
+                <span class="ripple-box"></span>
+                <span class="tooltip-txt tooltip-arrow">Button tooltip with arrow</span>
+            </button>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Like/Dislike Ratio</h1>
+            <div class="ratio-box">
+                <div class="ratio-buttons">
+                    <span class="material-icons icon-btn ratio-first-button ripple-center ripple-black ">thumb_up_alt
+                        <span class="ripple-box"></span>
+                    </span>
+                    <span class="ratio-first-number">0</span>
+                    <span class="material-icons icon-btn ratio-second-button ripple-center ripple-black">thumb_down_alt
+                        <span class="ripple-box"></span>
+                    </span>
+                    <span class="ratio-second-number">0</span>
+                </div>
+                <div class="ratio-indicator-box">
+                    <span class="ratio-indicator"></span>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Switch</h1>
+            <div class="switch-container">
+                <div class="switch" onclick="switchHandler(this)">
+                </div>
+            </div>
+            <div class="switch-container">
+                <div class="switch switch-active" onclick="switchHandler(this)"></div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">modal</h1>
+            <button class="button-none ripple ripple-blue modal-btn" onclick="modalHandler(this.parentNode.lastElementChild, true)">Open test modal
+                <span class="ripple-box"></span>
+            </button>
+            <div class="modal-container">
+                <div class="modal shadow-1">
+                    <h1>Login</h1>
+                    <div class="input-outline-box">
+                        <input class="input-outline" type="text" id="input4" placeholder="Ex: john" title="" required/>
+                        <label for="input4">Username</label>
+                    </div>
+                    <div class="input-outline-box" style="margin-top: 10px;">
+                        <input class="input-outline" type="text" id="input5" placeholder="Ex: test123" title="" required/>
+                        <label for="input5">Password</label>
+                    </div>
+                    <button class="button-none ripple ripple-blue" onclick="modalHandler(this.parentNode.parentNode, false)">Close modal
+                        <span class="ripple-box"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">loader check</h1>
+            <div class="loader"></div>
+            <div class="check">
+                <span class="material-icons">check</span>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">collapsible</h1>
+            <div>
+                <div class="collapsible-container">
+                    <div class="collapsible">
+                        <div class="collapsible-header">
+                            <h1 class="collapsible-title">Collapsible 1</h1>
+                        </div>
+                        <div class="collapsible-content">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt earum dolor, facere libero, exercitationem facilis, itaque molestias voluptates saepe rerum enim labore voluptatibus quos explicabo! Commodi et quae quisquam sunt.</p>
+                        </div>
+                    </div>
+                    <div class="collapsible">
+                        <div class="collapsible-header">
+                            <h1 class="collapsible-title">Collapsible 2</h1>
+                        </div>
+                        <div class="collapsible-content">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint quibusdam cum molestiae praesentium, earum hic non dicta culpa vel saepe quae tenetur ex vero. Corporis, non? Porro, explicabo sed. Reiciendis?</p>
+                            <div class="menu">
+                                <button class="menu-btn button-none ripple ripple-blue">Button
+                                    <span class="ripple-box"></span>
+                                </button>
+                                <div class="menu-box shadow-3">
+                                    <button onclick="closeMenu(this)">test2</button>
+                                    <button onclick="closeMenu(this)">test2</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapsible">
+                        <div class="collapsible-header">
+                            <h1 class="collapsible-title">Collapsible 3</h1>
+                            <span class="material-icons collapsible-icon ripple-center ripple-black">expand_more
+                                <span class="ripple-box"></span>
+                            </span>
+                        </div>
+                        <div class="collapsible-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora distinctio at itaque quia modi, explicabo dolores doloribus nulla reprehenderit omnis, consectetur porro error dolorum autem! Pariatur repellat natus adipisci totam.</p>
+                            <hr class="divider-1">
+                            <button style="margin-top: 10px;" class="button-outline ripple ripple-blue">test
+                                <span class="ripple-box"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">divider</h1>
+            <div style="width: 800px;">
+                <hr class="divider-1">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus debitis alias labore fugit dolore pariatur dolorum repellat explicabo tenetur voluptatum, dolorem reiciendis excepturi architecto at iure esse aliquid. Cum, reprehenderit.</p>
+                <hr class="divider-2">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis asperiores totam, iusto dolor repellat commodi quis, explicabo minus laborum beatae corporis sapiente. Sit, ratione vitae quia perspiciatis odit tempore quam!</p>
+                <hr class="divider-3">
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Quote</h1>
+            <div style="width: 600px;">
+                <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id necessitatibus rem quidem. Sunt impedit maxime natus a beatae ab cum sint sed porro atque! Ea quo pariatur id voluptate nemo.</p>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Autocomplete</h1>
+            <div class="flex-center">
+                <div class="menu margin-5">
+                    <div class="input-underline-box menu-btn">
+                        <input class="input-underline" type="text" id="input7" placeholder="placeholder" spellcheck="false" title="" required/>
+                        <label for="input7">Underline</label>
+                        <div class="input-buttons">
+                            <span class="input-arrow ripple-center ripple-black">
+                                <span class="material-icons">arrow_drop_down</span>
+                                <span class="ripple-box"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="menu-box shadow-3">
+                        <button onclick="closeMenu(this)">underline value1</button>
+                        <button onclick="closeMenu(this)">underline value2</button>
+                        <button onclick="closeMenu(this)">underline value3</button>
+                        <button onclick="closeMenu(this)">underline value4</button>
+                        <button onclick="closeMenu(this)">underline value5</button>
+                        <button onclick="closeMenu(this)">underline value6</button>
+                        <button onclick="closeMenu(this)">underline value7</button>
+                        <button onclick="closeMenu(this)">underline value8</button>
+                        <button onclick="closeMenu(this)">underline value9</button>
+                        <button onclick="closeMenu(this)">underline value10</button>
+                        <button onclick="closeMenu(this)">underline value11</button>
+                        <button onclick="closeMenu(this)">underline value12</button>
+                        <button onclick="closeMenu(this)">underline value13</button>
+                        <button onclick="closeMenu(this)">underline value14</button>
+                        <button onclick="closeMenu(this)">underline value15</button>
+                    </div>
+                </div>
+                <div class="menu margin-5">
+                    <div class="input-outline-box menu-btn">
+                        <input class="input-outline" type="text" id="input8" placeholder="placeholder" spellcheck="false" title="" required/>
+                        <label for="input8">outline</label>
+                        <div class="input-buttons">
+                            <span class="input-arrow ripple-center ripple-black">
+                                <span class="material-icons">arrow_drop_down</span>
+                                <span class="ripple-box"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="menu-box shadow-3">
+                        <button onclick="closeMenu(this)">outline value1</button>
+                        <button onclick="closeMenu(this)">outline value2</button>
+                    </div>
+                </div>
+                <div class="menu margin-5">
+                    <div class="input-filled-box menu-btn">
+                        <input class="input-filled" type="text" id="input9" placeholder="placeholder" spellcheck="false" title="" required/>
+                        <label for="input9">filled</label>
+                        <div class="input-buttons">
+                            <span class="input-arrow ripple-center ripple-black">
+                                <span class="material-icons">arrow_drop_down</span>
+                                <span class="ripple-box"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="menu-box shadow-3">
+                        <button onclick="closeMenu(this)">filled value1</button>
+                        <button onclick="closeMenu(this)">filled value2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Checkbox</h1>
+            <div class="flex-center">
+                <div class="checkbox-container ripple-center ripple-black">
+                    <span class="ripple-box"></span>
+                    <div class="checkbox">
+                        <span class="material-icons checkbox-icon">check</span>
+                    </div>
+                </div>
+                <div class="checkbox-container ripple-center ripple-black">
+                    <span class="ripple-box"></span>
+                    <div class="checkbox checkbox-active">
+                        <span class="material-icons checkbox-icon">check</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Collapsible dropdown</h1>
+            <div style="width: 200px;">
+                <div class="collapsible-dropdown-container">
+                    <button class="ripple ripple-black">dropdown
+                        <span class="ripple-box"></span>
+                    </button>
+                    <div class="collapsible-dropdown">
+                        <div class="collapsible-dropdown-container">
+                            <button class="ripple ripple-black">dropdown
+                                <span class="ripple-box"></span>
+                            </button>
+                            <div class="collapsible-dropdown">
+                                <button>link 1</button>
+                                <button>link 1</button>
+                                <div class="collapsible-dropdown-container">
+                                    <button class="ripple ripple-black">dropdown
+                                        <span class="ripple-box"></span>
+                                    </button>
+                                    <div class="collapsible-dropdown">
+                                        <button>link 1</button>
+                                        <button>link 1</button>
+                                        <button>link 1</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button>link 1</button>
+                        <button>link 1</button>
+                    </div>
+                </div>
+                <div class="collapsible-dropdown-container">
+                    <button class="ripple ripple-black">dropdown
+                        <span class="ripple-box"></span>
+                    </button>
+                    <div class="collapsible-dropdown">
+                        <button>link 1</button>
+                        <button>link 1</button>
+                        <button>link 1</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Chips</h1>
+            <div class="chip">
+                <p class="chip-txt">test test</p>
+                <span class="material-icons chip-ok">cancel</span>
+            </div>
+            <h3>Chips small</h3>
+            <div class="chip-small">
+                <p class="chip-txt-small">test test</p>
+                <span class="material-icons chip-ok-small">cancel</span>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Badges</h1>
+            <div class="flex-center">
+                <span class="margin-5" style="width: 40px; height: 40px; background-color: #eeeeee; position: relative;">
+                    <span class="badge">9</span>
+                </span>
+                <span class="margin-5" style="width: 40px; height: 40px; background-color: #eeeeee; position: relative;">
+                    <span class="badge">99</span>
+                </span>
+                <span class="margin-5" style="width: 40px; height: 40px; background-color: #eeeeee; position: relative;">
+                    <span class="badge">999+</span>
+                </span>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Typography</h1>
+            <span class="h1-txt">h1. Heading</span>
+            <span class="h2-txt">h2. Heading</span>
+            <span class="h3-txt">h3. Heading</span>
+            <span class="h4-txt">h4. Heading</span>
+            <span class="h5-txt">h5. Heading</span>
+            <span class="h6-txt">h6. Heading</span>
+            <span class="sub1-txt">subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</span>
+            <span class="sub2-txt">subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</span>
+            <span class="body1-txt">body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</span>
+            <span class="body2-txt">body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</span>
+            <span class="button-txt">BUTTON TEXT</span>
+            <span class="caption-txt">caption text</span>
+            <span class="overline-txt">OVERLINE TEXT</span>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Colors</h1>
+            <div></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="./js/material.js"></script>
+</body>
+</html>

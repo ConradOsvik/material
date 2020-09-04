@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./test.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tabs-selector-container">
+        <div class="tabs" id="tabs1">
+            <a onclick="tabChanger(this)" class="tab">Tab</a>
+            <a onclick="tabChanger(this)" class="tab">Tab two</a>
+            <a onclick="tabChanger(this)" class="tab">Tab three</a>
+            <a onclick="tabChanger(this)" class="tab default-tab">Tab four</a>
+            <a onclick="tabChanger(this)" class="tab">Tab five</a>
+            <a onclick="tabChanger(this)" class="tab">Tab six</a>
+            <a onclick="tabChanger(this)" class="tab">Tab seven</a>
+            <a onclick="tabChanger(this)" class="tab">Tab eight</a>
+        </div>
+        <span class="tab-indicator"></span>
+    </div>
+    <div class="tabs-content-container" id="tabs1-content">
+        <div class="tab-1">Tab 1</div>
+        <div class="tab-2">Tab 2</div>
+        <div class="tab-3">Tab 3</div>
+        <div class="tab-4">Tab 4</div>
+        <div class="tab-5">Tab 5</div>
+        <div class="tab-6">Tab 6</div>
+        <div class="tab-7">Tab 7</div>
+        <div class="tab-8">Tab 8</div>
+    </div>
+    <div style="width: 100px; height: 100px; background-color: black;" onclick="getAreal(this)"></div>
+    <script src="./test.js"></script>
+</body>
+</html>
