@@ -13,9 +13,10 @@
 <body>
     <header>
         <nav class="shadow-3">
-            <button class="button-box ripple ripple-white" onclick="darkmode()">Darkmode
+            <button class="button-icon-filled ripple-center ripple-white" onclick="darkmode(), darkmodeBtn(this.firstElementChild)">
+                <span class="material-icons" style="font-size: 30px; padding: 5px; color: #ffffff;">brightness_medium</span>
                 <span class="ripple-box"></span>
-            </button>            
+            </button>          
         </nav>
     </header>
     <main>
@@ -61,11 +62,11 @@
                 </div>
             </div>
             <div class="flex-center">
-                <button class="button-icon ripple-center ripple-black">
+                <button class="button-icon ripple-center ripple-invert">
                     <span class="material-icons">more_vert</span>
                     <span class="ripple-box"></span>
                 </button>
-                <button class="button-icon-filled ripple-center ripple-black">
+                <button class="button-icon-filled ripple-center ripple-invert">
                     <span class="material-icons">more_vert</span>
                     <span class="ripple-box"></span>
                 </button>
@@ -75,7 +76,7 @@
             <h1 class="h3-txt">Menu</h1>
             <div class="flex-center">
                 <div class="menu">
-                    <button class="menu-btn button-icon ripple-center ripple-black">
+                    <button class="menu-btn button-icon ripple-center ripple-invert">
                         <span class="material-icons">more_vert</span>
                         <span class="ripple-box"></span>
                     </button>
@@ -89,10 +90,10 @@
                         <span class="ripple-box"></span>
                     </button>
                     <div class="menu-box shadow-3">
-                        <button onclick="closeMenu(this)" class="ripple ripple-black">test2
+                        <button onclick="closeMenu(this)" class="ripple ripple-invert">test2
                             <span class="ripple-box"></span>
                         </button>
-                        <button onclick="closeMenu(this)" class="ripple ripple-black">test2
+                        <button onclick="closeMenu(this)" class="ripple ripple-invert">test2
                             <span class="ripple-box"></span>
                         </button>
                     </div>
@@ -104,10 +105,10 @@
                     <span class="ripple-box"></span>
                 </button>
                 <div class="menu-box shadow-3">
-                    <button class="ripple ripple-black">menu on top
+                    <button class="ripple ripple-invert">menu on top
                         <span class="ripple-box"></span>
                     </button>
-                    <button onclick="closeMenu(this)" class="ripple ripple-black">close
+                    <button onclick="closeMenu(this)" class="ripple ripple-invert">close
                         <span class="ripple-box"></span>
                     </button>
                 </div>
@@ -115,7 +116,7 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Drawer</h1>
-            <button class="button-box ripple ripple-white" onclick="drawerHandler('#drawer1')">Toggle drawer
+            <button class="button-box ripple ripple-invert" onclick="drawerHandler('#drawer1')">Toggle drawer
                 <span class="ripple-box"></span>
             </button>
             <div class="drawer" id="drawer1">
@@ -126,7 +127,7 @@
                                 <span class="ripple-box"></span>
                             </button>
                             <div class="menu-box shadow-3">
-                                <button onclick="closeMenu(this), drawerHandler('#drawer1')" class="ripple ripple-black">Close drawer
+                                <button onclick="closeMenu(this), drawerHandler('#drawer1')" class="ripple ripple-invert">Close drawer
                                     <span class="ripple-box"></span>
                                 </button>
                             </div>
@@ -150,34 +151,34 @@
                     <div class="input-underline-box margin-5">
                         <input class="input-underline" type="text" id="input10" placeholder="1 aug 2020" title="" required/>
                         <label for="input10">Pick a date</label>
-                        <div class="select-date-box ripple-center ripple-black">
+                        <div class="select-date-box ripple-center ripple-invert">
                             <span class="material-icons">insert_invitation</span>
                             <span class="ripple-box"></span>
                         </div>
                     </div>
                     <div class="calendar-box">
                         <div class="calendar-header">
-                            <button class="button-icon-filled ripple-center ripple-black calendar-previous">
+                            <button class="button-icon-filled ripple-center ripple-invert calendar-previous">
                                 <span class="material-icons">chevron_left</span>
                                 <span class="ripple-box"></span>
                             </button>
                             <div class="menu">
-                                <button id="calendar-header" class="ripple ripple-black calendar-year-button menu-btn">
+                                <button id="calendar-header" class="ripple ripple-invert calendar-year-button menu-btn">
                                     <span class="ripple-box"></span>
                                 </button>
                                 <div class="menu-box shadow-3 calendar-year-menu">
-                                    <button onclick="closeMenu(this)" class="ripple ripple-black calendar-previous-year">previous year
+                                    <button onclick="closeMenu(this)" class="ripple ripple-invert calendar-previous-year">previous year
                                         <span class="ripple-box"></span>
                                     </button>
-                                    <button onclick="closeMenu(this)" class="ripple ripple-black">this year
+                                    <button onclick="closeMenu(this)" class="ripple ripple-invert calendar-this-year">this year
                                         <span class="ripple-box"></span>
                                     </button>
-                                    <button onclick="closeMenu(this)" class="ripple ripple-black calendar-next-year">next year
+                                    <button onclick="closeMenu(this)" class="ripple ripple-invert calendar-next-year">next year
                                         <span class="ripple-box"></span>
                                     </button>
                                 </div>
                             </div>
-                            <button class="button-icon-filled ripple-center ripple-black calendar-next">
+                            <button class="button-icon-filled ripple-center ripple-invert calendar-next">
                                 <span class="material-icons">chevron_right</span>
                                 <span class="ripple-box"></span>
                             </button>
@@ -193,140 +194,140 @@
                         </div>
                         <div class="calendar-numbers">
                             <div class="numbers-row">
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                            </div>
-                            <div class="numbers-row">
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
                             </div>
                             <div class="numbers-row">
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                            </div>
-                            <div class="numbers-row">
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
-                                    <span class="ripple-box"></span>
-                                </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
                             </div>
                             <div class="numbers-row">
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
                             </div>
                             <div class="numbers-row">
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
-                                <span class="numbers-row-item ripple-center ripple-black">
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                            </div>
+                            <div class="numbers-row">
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
+                                    <span class="ripple-box"></span>
+                                </span>
+                                <span class="numbers-row-item ripple-center ripple-invert">
                                     <span class="ripple-box"></span>
                                 </span>
                             </div>
@@ -434,7 +435,7 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Example ripple box</h1>
-            <div class="ripple ripple-black shadow-0" style="width: 400px; height: 400px;">
+            <div class="ripple ripple-invert shadow-0" style="width: 400px; height: 400px;">
                 <span class="ripple-box"></span>
             </div>
         </div>
@@ -524,11 +525,11 @@
             <h1 class="h3-txt">Like/Dislike Ratio</h1>
             <div class="ratio-box">
                 <div class="ratio-buttons">
-                    <span class="material-icons icon-btn ratio-first-button ripple-center ripple-black ">thumb_up_alt
+                    <span class="material-icons icon-btn ratio-first-button ripple-center ripple-invert ">thumb_up_alt
                         <span class="ripple-box"></span>
                     </span>
                     <span class="ratio-first-number">0</span>
-                    <span class="material-icons icon-btn ratio-second-button ripple-center ripple-black">thumb_down_alt
+                    <span class="material-icons icon-btn ratio-second-button ripple-center ripple-invert">thumb_down_alt
                         <span class="ripple-box"></span>
                     </span>
                     <span class="ratio-second-number">0</span>
@@ -609,7 +610,7 @@
                     <div class="collapsible">
                         <div class="collapsible-header">
                             <h1 class="collapsible-title">Collapsible 3</h1>
-                            <span class="material-icons collapsible-icon ripple-center ripple-black">expand_more
+                            <span class="material-icons collapsible-icon ripple-center ripple-invert">expand_more
                                 <span class="ripple-box"></span>
                             </span>
                         </div>
@@ -648,7 +649,7 @@
                         <input class="input-underline" type="text" id="input7" placeholder="placeholder" spellcheck="false" title="" required/>
                         <label for="input7">Underline</label>
                         <div class="input-buttons">
-                            <span class="input-arrow ripple-center ripple-black">
+                            <span class="input-arrow ripple-center ripple-invert">
                                 <span class="material-icons">arrow_drop_down</span>
                                 <span class="ripple-box"></span>
                             </span>
@@ -677,7 +678,7 @@
                         <input class="input-outline" type="text" id="input8" placeholder="placeholder" spellcheck="false" title="" required/>
                         <label for="input8">outline</label>
                         <div class="input-buttons">
-                            <span class="input-arrow ripple-center ripple-black">
+                            <span class="input-arrow ripple-center ripple-invert">
                                 <span class="material-icons">arrow_drop_down</span>
                                 <span class="ripple-box"></span>
                             </span>
@@ -693,7 +694,7 @@
                         <input class="input-filled" type="text" id="input9" placeholder="placeholder" spellcheck="false" title="" required/>
                         <label for="input9">filled</label>
                         <div class="input-buttons">
-                            <span class="input-arrow ripple-center ripple-black">
+                            <span class="input-arrow ripple-center ripple-invert">
                                 <span class="material-icons">arrow_drop_down</span>
                                 <span class="ripple-box"></span>
                             </span>
@@ -709,13 +710,13 @@
         <div class="flex-column">
             <h1 class="h3-txt">Checkbox</h1>
             <div class="flex-center">
-                <div class="checkbox-container ripple-center ripple-black">
+                <div class="checkbox-container ripple-center ripple-invert">
                     <span class="ripple-box"></span>
                     <div class="checkbox">
                         <span class="material-icons checkbox-icon">check</span>
                     </div>
                 </div>
-                <div class="checkbox-container ripple-center ripple-black">
+                <div class="checkbox-container ripple-center ripple-invert">
                     <span class="ripple-box"></span>
                     <div class="checkbox checkbox-active">
                         <span class="material-icons checkbox-icon">check</span>
@@ -727,19 +728,19 @@
             <h1 class="h3-txt">Collapsible dropdown</h1>
             <div style="width: 200px;">
                 <div class="collapsible-dropdown-container">
-                    <button class="ripple ripple-black">dropdown
+                    <button class="ripple ripple-invert">dropdown
                         <span class="ripple-box"></span>
                     </button>
                     <div class="collapsible-dropdown">
                         <div class="collapsible-dropdown-container">
-                            <button class="ripple ripple-black">dropdown
+                            <button class="ripple ripple-invert">dropdown
                                 <span class="ripple-box"></span>
                             </button>
                             <div class="collapsible-dropdown">
                                 <button>link 1</button>
                                 <button>link 1</button>
                                 <div class="collapsible-dropdown-container">
-                                    <button class="ripple ripple-black">dropdown
+                                    <button class="ripple ripple-invert">dropdown
                                         <span class="ripple-box"></span>
                                     </button>
                                     <div class="collapsible-dropdown">
@@ -755,7 +756,7 @@
                     </div>
                 </div>
                 <div class="collapsible-dropdown-container">
-                    <button class="ripple ripple-black">dropdown
+                    <button class="ripple ripple-invert">dropdown
                         <span class="ripple-box"></span>
                     </button>
                     <div class="collapsible-dropdown">

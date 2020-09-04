@@ -2,6 +2,11 @@ const darkmode = () => {
   const body = document.querySelector("body");
   body.classList.toggle("darkmode");
 }
+
+const darkmodeBtn = (el) => {
+  el.innerHTML = document.querySelector('body').classList.contains('darkmode') ? 'brightness_high' : 'brightness_medium';
+}
+
 const allImg = document.querySelectorAll('img');
 [...allImg].forEach(img => {
   console.log(img.src);
@@ -291,13 +296,13 @@ const allCalendarBoxes = document.querySelectorAll('.calendar-box');
             for (i = 0; i < allCalendarCells.length; i++){
               if(allCalendarCells[i] !== e.target){
                 allCalendarCells[i].classList.remove('numbers-row-item-active');
-                allCalendarCells[i].classList.add('ripple-black');
-                allCalendarCells[i].classList.remove('ripple-white');
+                allCalendarCells[i].classList.add('ripple-invert');
+                allCalendarCells[i].classList.remove('ripple-invert-alt');
                 allCalendarCells[i].style = 'box-shadow: 0';
               }
             }
-            e.target.classList.add('ripple-white');
-            e.target.classList.remove('ripple-black');
+            e.target.classList.add('ripple-invert-alt');
+            e.target.classList.remove('ripple-invert');
             e.target.classList.add('numbers-row-item-active');
 
             const dateSelectorBox = getClosest(e.target, '.date-selector');
@@ -387,6 +392,10 @@ const allCalendarBoxes = document.querySelectorAll('.calendar-box');
       currentYear = currentYear + 1;
       showCalendar(currentMonth, currentYear);
     }
+    if(e.target.matches('.calendar-this-year')){
+      currentYear = today.getFullYear();
+      showCalendar(currentMonth, currentYear);
+    }
     if(e.target.matches('.calendar-previous-year')){
       currentYear = currentYear - 1;
       showCalendar(currentMonth, currentYear);
@@ -441,7 +450,7 @@ let rippleId = undefined;
 
     const ripple = document.createElement('span');
 
-    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-red'];
+    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-invert', 'ripple-invert-alt'];
     for(let i = 0; i < rippleColors.length; i++){
       if(button.classList.contains(rippleColors[i]) && document.querySelector('body').classList.contains('darkmode')){
         switch(rippleColors[i]){
@@ -450,20 +459,24 @@ let rippleId = undefined;
             ripple.style.setProperty('--rippleColorStart', 'rgba(144, 202, 249, 0.1)');
             break;
           case 'ripple-white':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
             break;
           case 'ripple-grey':
             ripple.style.setProperty('--rippleColor', 'rgba(125, 125, 125, 0.3)');
             ripple.style.setProperty('--rippleColorStart', 'rgba(125, 125, 125, 0.1)');
             break;
           case 'ripple-black':
+            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            break;
+          case 'ripple-invert':
             ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
             ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
             break;
-          case 'ripple-red':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 0, 0, 0.1)');
+          case 'ripple-invert-alt':
+            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
             break;
         }
       } else if(button.classList.contains(rippleColors[i]) && !document.querySelector('body').classList.contains('darkmode')){
@@ -484,9 +497,13 @@ let rippleId = undefined;
             ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
             ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
             break;
-          case 'ripple-red':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 0, 0, 0.1)');
+          case 'ripple-invert':
+            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            break;
+          case 'ripple-invert-alt':
+            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
             break;
         }
       }
@@ -629,7 +646,7 @@ const buttonsCenter = document.querySelectorAll('.ripple-center');
 
     const ripple = document.createElement('span');
 
-    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-red'];
+    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-invert', 'ripple-invert-alt'];
     for(let i = 0; i < rippleColors.length; i++){
       if(button.classList.contains(rippleColors[i]) && document.querySelector('body').classList.contains('darkmode')){
         switch(rippleColors[i]){
@@ -638,20 +655,24 @@ const buttonsCenter = document.querySelectorAll('.ripple-center');
             ripple.style.setProperty('--rippleColorStart', 'rgba(144, 202, 249, 0.1)');
             break;
           case 'ripple-white':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
             break;
           case 'ripple-grey':
             ripple.style.setProperty('--rippleColor', 'rgba(125, 125, 125, 0.3)');
             ripple.style.setProperty('--rippleColorStart', 'rgba(125, 125, 125, 0.1)');
             break;
           case 'ripple-black':
+            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            break;
+          case 'ripple-invert':
             ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
             ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
             break;
-          case 'ripple-red':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 0, 0, 0.1)');
+          case 'ripple-invert-alt':
+            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
             break;
         }
       } else if(button.classList.contains(rippleColors[i]) && !document.querySelector('body').classList.contains('darkmode')){
@@ -672,9 +693,13 @@ const buttonsCenter = document.querySelectorAll('.ripple-center');
             ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
             ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
             break;
-          case 'ripple-red':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 0, 0, 0.1)');
+          case 'ripple-invert':
+            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            break;
+          case 'ripple-invert-alt':
+            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
+            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
             break;
         }
       }
@@ -873,6 +898,13 @@ const changeRatioIndicator = () => {
 
 const switchHandler = (el) => {
   el.classList.toggle('switch-active');
+}
+const getSwitchState = (el) => {
+  if(el.classList.contains('switch-active')){
+    return true;
+  } else{
+    return false;
+  }
 }
 
 const modalHandler = (el, state) => {

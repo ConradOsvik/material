@@ -17,6 +17,7 @@
     --darkText: rgba(0, 0, 0, 0.87);
     --semiDarkBackground: #ffffff;
     --darkBackground: #ffffff;
+    --tooltipBG: rgba(155, 155, 155, 0.95);
 }
 .darkmode{
     --background: #242424;
@@ -37,6 +38,7 @@
     --darkText: rgba(255, 255, 255, 0.87);
     --semiDarkBackground: #424242;
     --darkBackground: #363636;
+    --tooltipBG: rgba(100, 100, 100, 0.95);
 }
 body{
     background-color: var(--background);
@@ -1296,7 +1298,7 @@ Simple sliding aniamtion
     top: -50px;
     left: 50%;
     transform: translateX(-50%) scale(0.75);
-    background-color: rgba(155, 155, 155, 0.95);
+    background-color: var(--tooltipBG);
     color: #ffffff;
     padding: 7px 10px;
     border-radius: 3px;
@@ -1328,7 +1330,7 @@ Simple sliding aniamtion
     height: 0; 
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-top: 7px solid rgba(155, 155, 155, 0.95);
+    border-top: 7px solid var(--tooltipBG);
 }
 
 .ratio-box{
