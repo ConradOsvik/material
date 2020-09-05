@@ -117,7 +117,7 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Drawer</h1>
-            <button class="button-box ripple ripple-invert" onclick="drawerHandler('#drawer1')">Toggle drawer
+            <button class="button-box ripple ripple-invert-alt" onclick="drawerHandler('#drawer1')">Toggle drawer
                 <span class="ripple-box"></span>
             </button>
             <div class="drawer" id="drawer1">
@@ -423,14 +423,28 @@
         </div>
         <div>
             <h1 class="h3-txt">Action button</h1>
-            <div class="action-button-div">
-                <span class="material-icons action-button shadow-3">more_vert</span>
-                <div class="action-child-button-div">
-                    <span class="material-icons action-child-button shadow-3">bookmark</span>
-                    <span class="material-icons action-child-button shadow-3">card_giftcard</span>
-                    <span class="material-icons action-child-button shadow-3">account_circle</span>
-                    <span class="material-icons action-child-button shadow-3">close</span>
-                    <span class="material-icons action-child-button shadow-3">menu</span>
+            <div class="action-button-container">
+                <div class="action-button ripple ripple-invert-alt">
+                    <span class="ripple-box"></span>
+                    <span class="material-icons action-button-icon">create</span>
+                </div>
+                <div class="action-button-options">
+                    <div class="action-button-option ripple ripple-invert tooltip">
+                        <span class="material-icons action-button-option-icon">account_circle</span>
+                        <span class="tooltip-txt tooltip-left">Your account</span>
+                        <span class="ripple-box"></span>
+                    </div>
+                    <div class="action-button-option ripple ripple-invert tooltip">
+                        <span class="material-icons action-button-option-icon">favorite</span>
+                        
+                        <span class="tooltip-txt tooltip-left">Your Favorites</span>
+                        <span class="ripple-box"></span>
+                    </div>
+                    <div class="action-button-option ripple ripple-invert tooltip">
+                        <span class="material-icons action-button-option-icon">bookmark</span>
+                        <span class="tooltip-txt tooltip-left">Your bookmarks</span>
+                        <span class="ripple-box"></span>
+                    </div>
                 </div>
             </div>
         </div>

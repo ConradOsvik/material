@@ -18,6 +18,7 @@
     --semiDarkBackground: #ffffff;
     --darkBackground: #ffffff;
     --tooltipBG: rgba(155, 155, 155, 0.95);
+    --fabHover: rgb(216, 216, 216);
 }
 .darkmode{
     --background: #242424;
@@ -39,6 +40,7 @@
     --semiDarkBackground: #424242;
     --darkBackground: #363636;
     --tooltipBG: rgba(100, 100, 100, 0.95);
+    --fabHover: rgb(94, 94, 94);
 }
 body{
     background-color: var(--background);
@@ -999,7 +1001,89 @@ main{
     transition: 550ms;
 }
 
-
+.action-button-container{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+.action-button{
+    position: relative;
+    margin: 10px 20px 20px 20px;
+    background-color: var(--buttonColor);
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+    transition: 300ms;
+    cursor: pointer;
+}
+.action-button:active{
+    box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.action-button:hover{
+    background-color: var(--buttonBoxHover);
+}
+.action-button-icon{
+    color: var(--background);
+    font-size: 25px;
+    padding: 20px;
+    user-select: none;
+}
+.action-button-options{
+    position: relative;
+    width: 65px;
+    margin: 20px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+.action-button-option{
+    background-color: var(--semiDarkBackground);
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+    opacity: 0;
+    transition: 300ms;
+    transform: scale(0);
+    visibility: hidden;
+}
+.action-button-option:active{
+    box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.action-button-option:hover{
+    background-color: var(--fabHover);
+}
+.action-button-option-icon{
+    color: var(--lightText);
+    font-size: 20px;
+    padding: 10px;
+    user-select: none;
+}
+.action-button-active div{
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+}
+.action-button-active div:nth-child(2){
+    transition-delay: 50ms;
+}
+.action-button-active div:nth-child(3){
+    transition-delay: 100ms;
+}
+.action-button-active div:nth-child(4){
+    transition-delay: 150ms;
+}
+.action-button-active div:nth-child(5){
+    transition-delay: 200ms;
+}
+.action-button-active div:nth-child(6){
+    transition-delay: 250ms;
+}
+/*
 .action-button-div{
     position: fixed;
     z-index: 100;
@@ -1061,7 +1145,7 @@ main{
 .action-child-button-div span:nth-child(5){
     transition-delay: 0ms;
 }
-
+*/
 .card{
     max-width: 350px;
     min-width: 275px;
@@ -1332,7 +1416,12 @@ Simple sliding aniamtion
     left: 120%;
     transform: translateY(-50%) scale(0.75);
 }
-.tooltip:hover > .tooltip-bottom, .tooltip-top{
+.tooltip:hover > .tooltip-top{
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+.tooltip:hover > .tooltip-bottom{
     visibility: visible;
     transform: translateX(-50%) scale(1);
     opacity: 1;

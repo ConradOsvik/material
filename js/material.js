@@ -62,6 +62,26 @@ const allInputs = document.querySelectorAll('.input-underline-box, .input-outlin
     input.style.setProperty('--inputColor', color);
   }
 });
+const allFabs = document.querySelectorAll('.action-button-container');
+[...allFabs].forEach(fabContainer => {
+  const fab = fabContainer.querySelector('.action-button');
+  const fabOptions = fabContainer.querySelector('.action-button-options');
+  const allFabOption = fabOptions.querySelectorAll('.action-button-option');
+  [...allFabOption].forEach(fabOption => {
+    fabOption.addEventListener('click', e => {
+      fabOptions.classList.remove('action-button-active');
+    });
+  });
+  fab.addEventListener('mouseenter', e => {
+    fabOptions.classList.add('action-button-active');
+  });
+  fabContainer.addEventListener('mouseleave', e => {
+    fabOptions.classList.remove('action-button-active');
+  });
+  fab.addEventListener('click', e => {
+    fabOptions.classList.toggle('action-button-active');
+  });
+});
 /*
 //TODO: Hva gjør denne koden? xDDDDD
 const allInput = document.querySelectorAll('.input-underline, .input-outline, .input-filled');
@@ -855,15 +875,6 @@ const tabChanger = (tab) => {
     }
   }, 500);
 }
-
-const allTooltips = document.querySelectorAll('.tooltip');
-[...allTooltips].forEach(tooltip => {
-  tooltip.addEventListener('mouseover', e => {
-    const tooltipTxt = tooltip.querySelector('.tooltip-txt')
-    const test = checkVisible(tooltipTxt);
-    console.log(test);
-  });
-});
 
 const ratioButton1 = document.querySelector('.ratio-first-button');
 const ratioButton2 = document.querySelector('.ratio-second-button');
