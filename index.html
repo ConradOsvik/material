@@ -13,13 +13,24 @@
 <body>
     <header>
         <nav class="shadow-3">
-            <button class="button-icon-filled ripple-center ripple-white tooltip" onclick="darkmode(), darkmodeBtn(this.firstElementChild)">
-                <span class="material-icons" style="font-size: 30px; padding: 5px; color: #ffffff;">brightness_medium</span>
+            <button class="button-icon-filled button-icon-default-main-theme ripple-center ripple-default-main-theme tooltip" onclick="darkmode(), darkmodeBtn(this.firstElementChild)">
+                <span class="material-icons" style="font-size: 30px; padding: 5px;">brightness_medium</span>
                 <span class="ripple-box"></span>
                 <span class="tooltip-txt tooltip-bottom">Change color theme</span>
             </button>          
         </nav>
     </header>
+    <button id="themeChangerBtn" class="button-outline button-main-theme-outline ripple ripple-main-theme">
+        change theme
+        <span class="ripple-box"></span>
+    </button>
+    <button class="button-box button-main-theme-box ripple ripple-invert-main-theme">
+        button
+        <span class="ripple-box"></span>
+    </button>
+    <button class="button-none button-main-theme-none ripple ripple-main-theme">None
+        <span class="ripple-box"></span>
+    </button>
     <main>
         <div class="flex-column">
             <h1 class="h3-txt">Inputs</h1>
@@ -42,26 +53,63 @@
             <h1 class="h3-txt">Buttons</h1>
             <div class="flex-center">
                 <div>
-                    <button class="button-none margin-5">None</button>
+                    <button class="button-none button-main-theme-none margin-5">None</button>
                 </div>
                 <div>
-                    <button class="button-outline margin-5">Outline</button>
+                    <button class="button-outline button-main-theme-outline margin-5">Outline</button>
                 </div>
                 <div>
-                    <button class="button-box margin-5">Box</button>
+                    <button class="button-box button-main-theme-box margin-5">Box</button>
                 </div>
             </div>
             <div class="flex-center">
                 <div>
-                    <button class="button-none-slim margin-5">None</button>
+                    <button class="button-none button-none-slim button-main-theme-none margin-5">None</button>
                 </div>
                 <div>
-                    <button class="button-outline-slim margin-5">Outline</button>
+                    <button class="button-outline button-outline-slim button-main-theme-outline margin-5">Outline</button>
                 </div>
                 <div>
-                    <button class="button-box-slim margin-5">Box</button>
+                    <button class="button-box button-box-slim button-main-theme-box margin-5">Box</button>
                 </div>
             </div>
+            <h1 class="h3-txt">Buttons with colors</h1>
+            <div class="flex-center">
+                <div>
+                    <button class="button-none button-none-white margin-5">none white</button>
+                </div>
+                <div>
+                    <button class="button-outline button-outline-white margin-5">Outline white</button>
+                </div>
+                <div>
+                    <button class="button-none button-none-black margin-5">none black</button>
+                </div>
+                <div>
+                    <button class="button-outline button-outline-black margin-5">Outline black</button>
+                </div>
+                <div>
+                    <button class="button-none button-none-default margin-5">none default</button>
+                </div>
+                <div>
+                    <button class="button-outline button-outline-default margin-5">outline default</button>
+                </div>
+                <div>
+                    <button class="button-box button-box-default margin-5">Box default</button>
+                </div>
+            </div>
+            <h1 class="h3-txt">Disabled buttons</h1>
+            <div class="flex-center">
+                <div>
+                    <button class="button-none button-none-disabled margin-5">none disabled</button>
+                </div>
+                <div>
+                    <button class="button-outline button-outline-disabled margin-5">Outline disabled</button>
+                </div>
+                <div>
+                    <button class="button-box button-box-disabled margin-5">Box disabled</button>
+                </div>
+            </div>
+            <h1 class="h3-txt">Icon buttons</h1>
             <div class="flex-center">
                 <button class="button-icon ripple-center ripple-invert">
                     <span class="material-icons">more_vert</span>
@@ -72,6 +120,32 @@
                     <span class="ripple-box"></span>
                 </button>
             </div>
+            <div class="flex-column">
+                <h1 class="h5-txt">Main theme icon</h1>
+                <div class="flex-center">
+                    <button class="button-icon button-icon-main-theme ripple-center ripple-main-theme">
+                        <span class="material-icons">more_vert</span>
+                        <span class="ripple-box"></span>
+                    </button>
+                    <button class="button-icon-filled button-icon-main-theme ripple-center ripple-main-theme">
+                        <span class="material-icons">more_vert</span>
+                        <span class="ripple-box"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex-column">
+                <h1 class="h5-txt">Main theme default icon</h1>
+                <div class="flex-center">
+                    <button class="button-icon button-icon-default-main-theme ripple-center ripple-default-main-theme">
+                        <span class="material-icons">more_vert</span>
+                        <span class="ripple-box"></span>
+                    </button>
+                    <button class="button-icon-filled button-icon-default-main-theme ripple-center ripple-default-main-theme">
+                        <span class="material-icons">more_vert</span>
+                        <span class="ripple-box"></span>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Menu</h1>
@@ -81,16 +155,29 @@
                         <span class="material-icons">more_vert</span>
                         <span class="ripple-box"></span>
                     </button>
-                    <div class="menu-box shadow-3">
+                    <div class="menu-box">
                         <button onclick="closeMenu(this)">test</button>
                         <button onclick="closeMenu(this)">test</button>
                     </div>
                 </div>
                 <div class="menu">
-                    <button class="menu-btn button-none ripple ripple-blue">Button
+                    <button class="menu-btn button-none button-main-theme-none ripple ripple-main-theme">Button
                         <span class="ripple-box"></span>
                     </button>
-                    <div class="menu-box shadow-3">
+                    <div class="menu-box">
+                        <button onclick="closeMenu(this)" class="ripple ripple-invert">test2
+                            <span class="ripple-box"></span>
+                        </button>
+                        <button onclick="closeMenu(this)" class="ripple ripple-invert">test2
+                            <span class="ripple-box"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="menu">
+                    <button class="menu-btn button-none button-main-theme-none ripple ripple-main-theme">Button
+                        <span class="ripple-box"></span>
+                    </button>
+                    <div class="menu-box menu-box-inverted">
                         <button onclick="closeMenu(this)" class="ripple ripple-invert">test2
                             <span class="ripple-box"></span>
                         </button>
@@ -102,10 +189,10 @@
             </div>
             <h1 class="h3-txt">Menu on top</h1>
             <div class="menu">
-                <button class="menu-btn menu-ontop button-none ripple ripple-blue">Button
+                <button class="menu-btn menu-ontop button-none button-main-theme-none ripple ripple-main-theme">Button
                     <span class="ripple-box"></span>
                 </button>
-                <div class="menu-box shadow-3">
+                <div class="menu-box">
                     <button class="ripple ripple-invert">menu on top
                         <span class="ripple-box"></span>
                     </button>
@@ -117,17 +204,17 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Drawer</h1>
-            <button class="button-box ripple ripple-invert-alt" onclick="drawerHandler('#drawer1')">Toggle drawer
+            <button class="button-box button-main-theme-box ripple ripple-invert-main-theme" onclick="drawerHandler('#drawer1')">Toggle drawer
                 <span class="ripple-box"></span>
             </button>
             <div class="drawer" id="drawer1">
                 <div class="drawer-content">
                     <div class="flex-column">
                         <div class="menu">
-                            <button class="menu-btn button-none ripple ripple-blue">Menu
+                            <button class="menu-btn button-none button-main-theme-none ripple ripple-main-theme">Menu
                                 <span class="ripple-box"></span>
                             </button>
-                            <div class="menu-box shadow-3">
+                            <div class="menu-box">
                                 <button onclick="closeMenu(this), drawerHandler('#drawer1')" class="ripple ripple-invert">Close drawer
                                     <span class="ripple-box"></span>
                                 </button>
@@ -141,7 +228,24 @@
             <h1 class="h3-txt">Select</h1>
             <div class="flex-center">
                 <div class="select">
-                    
+                    <div class="input-outline-box margin-5 select-btn">
+                        <input class="input-outline" type="text" id="input6" title="" required/>
+                        <label for="input6">Select</label>
+                    </div>
+                    <div class="select-menu">
+                        <button onclick="closeSelect(this)" class="ripple ripple-invert">select
+                            <span class="ripple-box"></span>
+                        </button>
+                        <button onclick="closeSelect(this)" class="ripple ripple-invert">select
+                            <span class="ripple-box"></span>
+                        </button>
+                        <button onclick="closeSelect(this)" class="ripple ripple-invert">select
+                            <span class="ripple-box"></span>
+                        </button>
+                        <button onclick="closeSelect(this)" class="ripple ripple-invert">select
+                            <span class="ripple-box"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,7 +271,7 @@
                                 <button id="calendar-header" class="ripple ripple-invert calendar-year-button menu-btn">
                                     <span class="ripple-box"></span>
                                 </button>
-                                <div class="menu-box shadow-3 calendar-year-menu">
+                                <div class="menu-box calendar-year-menu">
                                     <button onclick="closeMenu(this)" class="ripple ripple-invert calendar-previous-year">previous year
                                         <span class="ripple-box"></span>
                                     </button>
@@ -405,10 +509,10 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Toast</h1>
-            <button class="button-outline" onclick="showToast('This is a toast This is a toast This is a toast')">Show toast</button>
+            <button class="button-outline button-main-theme-outline" onclick="showToast('This is a toast This is a toast This is a toast')">Show toast</button>
             <div class="toast shadow-3">
                 <p class="toast-msg"></p>
-                <button class="button-none toast-ok ripple ripple-blue">Ok
+                <button class="button-none button-main-theme-none toast-ok ripple ripple-main-theme">Ok
                     <span class="ripple-box"></span>
                 </button>
             </div>
@@ -416,7 +520,7 @@
         <div class="flex-column">
             <h1 class="h3-txt">Ripple effect</h1>
             <div>
-                <button class="button-outline ripple ripple-blue">Button
+                <button class="button-outline button-main-theme-outline ripple ripple-main-theme">Button
                     <span class="ripple-box"></span>
                 </button>
             </div>
@@ -468,15 +572,15 @@
                 <hr class="divider-1">
                 <div class="card-footer">
                     <div class="menu">
-                        <button class="menu-btn button-none-slim ripple ripple-blue">Share
+                        <button class="menu-btn button-none button-main-theme-none button-none-slim ripple ripple-main-theme">Share
                             <span class="ripple-box"></span>
                         </button>
-                        <div class="menu-box shadow-3">
+                        <div class="menu-box">
                             <button onclick="closeMenu(this)">Share 1</button>
                             <button onclick="closeMenu(this)">Share 2</button>
                         </div>
                     </div>
-                    <button class="button-none-slim ripple ripple-blue">like
+                    <button class="button-none button-main-theme-none button-none-slim ripple ripple-main-theme">like
                         <span class="ripple-box"></span>
                     </button>
                 </div>
@@ -484,46 +588,68 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Tabs</h1>
-            <div class="tabs-container">
+            <div class="tabs-selector-container">
                 <div class="tabs" id="tabs1">
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab
+                    <a onclick="tabChanger(this)" class="tab default-tab ripple ripple-grey">
+                        Tab
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab two
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey disabled-tab">
+                        Tab two
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab three
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey">
+                        Tab three
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab four
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey">
+                        Tab four
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab five
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey">
+                        Tab five
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab six
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey">
+                        Tab six
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab seven
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey">
+                        Tab seven
                         <span class="ripple-box"></span>
                     </a>
-                    <a onclick="tabChanger(this)" class="tab ripple ripple-blue">Tab eight
+                    <a onclick="tabChanger(this)" class="tab ripple ripple-grey">
+                        Tab eight
                         <span class="ripple-box"></span>
                     </a>
                 </div>
-                <div class="tab-indicator-container">
-                    <span class="tab-indicator"></span>
-                </div>
+                <span class="tab-indicator"></span>
             </div>
             <div class="tabs-content-container" id="tabs1-content">
-                <div class="tab-1">Tab 1</div>
-                <div class="tab-2">Tab 2</div>
-                <div class="tab-3">Tab 3</div>
-                <div class="tab-4">Tab 4</div>
-                <div class="tab-5">Tab 5</div>
-                <div class="tab-6">Tab 6</div>
-                <div class="tab-7">Tab 7</div>
-                <div class="tab-8">Tab 8</div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
+                <div class="content-tab">
+                    <img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                </div>
             </div>
         </div>
         <div class="flex-column">
@@ -556,31 +682,40 @@
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">Switch</h1>
-            <div class="switch-container">
+            <div class="switch-container switch-main-theme">
                 <div class="switch" onclick="switchHandler(this)">
+                    <div class="switch-head-container ripple-center ripple-invert">
+                        <span class="switch-head"></span>
+                        <span class="ripple-box"></span>
+                    </div>
                 </div>
             </div>
             <div class="switch-container">
-                <div class="switch switch-active" onclick="switchHandler(this)"></div>
+                <div class="switch switch-active" onclick="switchHandler(this)">
+                    <div class="switch-head-container ripple-center ripple-invert">
+                        <span class="switch-head"></span>
+                        <span class="ripple-box"></span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="flex-column">
             <h1 class="h3-txt">modal</h1>
-            <button class="button-none ripple ripple-blue modal-btn" onclick="modalHandler(this.parentNode.lastElementChild, true)">Open test modal
+            <button class="button-none ripple ripple-blue modal-btn" onclick="modalHandler('modal1', true)">Open test modal
                 <span class="ripple-box"></span>
             </button>
-            <div class="modal-container">
+            <div class="modal-container" id="modal1">
                 <div class="modal shadow-1">
                     <h1>Login</h1>
-                    <div class="input-outline-box">
-                        <input class="input-outline" type="text" id="input4" placeholder="Ex: john" title="" required/>
+                    <div class="input-underline-box">
+                        <input class="input-underline" type="text" id="input4" placeholder="Ex: john" title="" required/>
                         <label for="input4">Username</label>
                     </div>
-                    <div class="input-outline-box" style="margin-top: 10px;">
-                        <input class="input-outline" type="text" id="input5" placeholder="Ex: test123" title="" required/>
+                    <div class="input-underline-box" style="margin-top: 10px;">
+                        <input class="input-underline" type="text" id="input5" placeholder="Ex: test123" title="" required/>
                         <label for="input5">Password</label>
                     </div>
-                    <button class="button-none ripple ripple-blue" onclick="modalHandler(this.parentNode.parentNode, false)">Close modal
+                    <button class="button-none ripple ripple-blue" onclick="modalHandler('modal1', false)">Close modal
                         <span class="ripple-box"></span>
                     </button>
                 </div>
@@ -615,7 +750,7 @@
                                 <button class="menu-btn button-none ripple ripple-blue">Button
                                     <span class="ripple-box"></span>
                                 </button>
-                                <div class="menu-box shadow-3">
+                                <div class="menu-box">
                                     <button onclick="closeMenu(this)">test2</button>
                                     <button onclick="closeMenu(this)">test2</button>
                                 </div>
@@ -670,7 +805,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="menu-box shadow-3">
+                    <div class="menu-box">
                         <button onclick="closeMenu(this)">underline value1</button>
                         <button onclick="closeMenu(this)">underline value2</button>
                         <button onclick="closeMenu(this)">underline value3</button>
@@ -699,7 +834,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="menu-box shadow-3">
+                    <div class="menu-box">
                         <button onclick="closeMenu(this)">outline value1</button>
                         <button onclick="closeMenu(this)">outline value2</button>
                     </div>
@@ -715,7 +850,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="menu-box shadow-3">
+                    <div class="menu-box">
                         <button onclick="closeMenu(this)">filled value1</button>
                         <button onclick="closeMenu(this)">filled value2</button>
                     </div>
@@ -827,6 +962,113 @@
         <div class="flex-column">
             <h1 class="h3-txt">Colors</h1>
             <div></div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Skeleton</h1>
+            <div class="flex-column">
+                <h1 class="h5-txt">Profile img</h1>
+                <span class="profile-img-skeleton"></span>
+                <h1 class="h5-txt">line</h1>
+                <span class="line-skeleton"></span>
+                <h1 class="h5-txt">Small text</h1>
+                <span class="small-txt-skeleton"></span>
+                <h1 class="h5-txt">Medium text</h1>
+                <span class="medium-txt-skeleton"></span>
+                <h1 class="h5-txt">Large text</h1>
+                <span class="large-txt-skeleton"></span>
+                <h1 class="h5-txt">Title text</h1>
+                <span class="title-txt-skeleton"></span>
+                <h1 class="h5-txt">img/video box</h1>
+                <span class="box-skeleton"></span>
+                <h1 class="h3-txt">Animations</h1>
+                <h1 class="h5-txt">pulse</h1>
+                <span class="box-skeleton skeleton-pulse"></span>
+                <h1 class="h5-txt">wave</h1>
+                <span class="box-skeleton skeleton-wave"></span>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">stepper</h1>
+            <div class="stepper-container">
+                <div class="stepper-content">
+                    <div class="stepper-content-tab active-stepper-tab">
+                        <h1 class="h5-txt">tab 1</h1>
+                    </div>
+                    <div class="stepper-content-tab">
+                        <h1 class="h5-txt">tab 2</h1>
+                    </div>
+                    <div class="stepper-content-tab">
+                        <h1 class="h5-txt">tab 3</h1>
+                    </div>
+                </div>
+                <div class="stepper-button-bar">
+                    <button class="button-none button-none-default ripple ripple-invert stepper-back" onclick="stepperHandler(this)">
+                        back
+                        <span class="ripple-box"></span>
+                    </button>
+                    <div class="stepper-indicator">
+                        <span class="stepper-indicator-dot active-stepper-dot"></span>
+                        <span class="stepper-indicator-dot"></span>
+                        <span class="stepper-indicator-dot"></span>
+                    </div>
+                    <button class="button-box ripple ripple-invert-alt stepper-next" onclick="stepperHandler(this)">
+                        next
+                        <span class="ripple-box"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex-column">
+            <h1 class="h3-txt">Radio</h1>
+            <h1 class="h5-txt">Radio Group</h1>
+            <div class="radio-group">
+                <div class="radio">
+                    <span class="radio-button radio-button-main-theme ripple-center ripple-invert">
+                        <span class="radio-button-circle">
+                            <span class="radio-button-dot"></span>
+                        </span>
+                        <span class="ripple-box"></span>
+                    </span>
+                    <span class="radio-txt">Option 1</span>
+                </div>
+                <div class="radio">
+                    <span class="radio-button radio-button-main-theme ripple-center ripple-invert">
+                        <span class="radio-button-circle">
+                            <span class="radio-button-dot"></span>
+                        </span>
+                        <span class="ripple-box"></span>
+                    </span>
+                    <span class="radio-txt">Option 2</span>
+                </div>
+                <div class="radio radio-disabled">
+                    <span class="radio-button radio-button-main-theme ripple-center ripple-invert">
+                        <span class="radio-button-circle">
+                            <span class="radio-button-dot"></span>
+                        </span>
+                        <span class="ripple-box"></span>
+                    </span>
+                    <span class="radio-txt">Option 3</span>
+                </div>
+                <div class="radio">
+                    <span class="radio-button radio-button-main-theme ripple-center ripple-invert">
+                        <span class="radio-button-circle">
+                            <span class="radio-button-dot"></span>
+                        </span>
+                        <span class="ripple-box"></span>
+                    </span>
+                    <span class="radio-txt">Option 4</span>
+                </div>
+            </div>
+            <h1 class="h5-txt">Radio button</h1>
+            <div class="radio">
+                <span class="radio-button radio-button-main-theme ripple-center ripple-invert">
+                    <span class="radio-button-circle">
+                        <span class="radio-button-dot"></span>
+                    </span>
+                    <span class="ripple-box"></span>
+                </span>
+                <span class="radio-txt">Option</span>
+            </div>
         </div>
     </main>
     <footer></footer>

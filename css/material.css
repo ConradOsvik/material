@@ -2,45 +2,404 @@
     --background: #ffffff;
     --color: #242424;
     --inputColor: #1976d2;
-    --inputBackgroundColor: #eeeeee;
-    --inputBackgroundColorHover: #e0e0e0;
-    --buttonColor: #1976d2;
-    --buttonBoxColor: #ffffff;
-    --buttonBoxHover: rgb(17, 82, 147);
-    --buttonBackgroundColorHover: rgba(25, 118, 210, 0.08);
-    --buttonBorderColor: rgba(25, 118, 210, 0.5);
-    --navBar: #1976d2;
+    --inputBackgroundColor: rgba(0, 0, 0, 0.09);
+    --inputBackgroundColorHover: rgba(0, 0, 0, 0.13);
+
+    --ripple-blue-color: rgb(25, 118, 210);
+    --ripple-white-color: rgb(255, 255, 255);
+    --ripple-grey-color: rgb(125, 125, 125);
+    --ripple-black-color: rgb(0, 0, 0);
+    --ripple-invert-color: rgb(0, 0, 0);
+    --ripple-invert-alt-color: rgb(255, 255, 255);
+
+    --buttonColor: rgba(0, 0, 0, 0.87);
+    --buttonBoxColor: rgba(0, 0, 0, 0.87);
+    --buttonBoxBackgroundColor: #e0e0e0;
+    --buttonBoxHover: #d5d5d5;
+    --buttonBackgroundColorHover:  rgba(0, 0, 0, 0.04);
+    --buttonBorderColor: rgba(0, 0, 0, 0.23);
+
+    --buttonWhiteColor: #fff;
+    --buttonWhiteBackgroundColorHover: rgba(0, 0, 0, 0.04);
+    --buttonWhiteBorderColor: rgba(255, 255, 255, 0.23);
+
+    --buttonBlackColor: rgba(0, 0, 0, 0.87);
+    --buttonBlackBackgroundColorHover: rgba(0, 0, 0, 0.04);
+    --buttonBlackBorderColor: rgba(0, 0, 0, 0.23);
+
+    --buttonDefaultColor: rgba(0, 0, 0, 0.87);
+    --buttonDefaultBoxColor: #fff;
+    --buttonDefaultBoxHover: #d5d5d5;
+    --buttonDefaultBackgroundColorHover: rgba(0, 0, 0, 0.04);
+    --buttonDefaultBorderColor: rgba(0, 0, 0, 0.23);
+
+    --buttonDisabledColor: rgba(0, 0, 0, 0.26);
+    --buttonDisabledBackgroundColor: rgba(0, 0, 0, 0.12);
+
     --iconButtonHover: rgba(0, 0, 0, 0.1);
+    --iconButtonColor: rgba(0, 0, 0, 0.54);
+
+    --switchBackgroundColorHover: rgba(0, 0, 0, 0.08);
+    --navBar: #1976d2;
     --menuButtonHover: rgba(0, 0, 0, 0.05);
-    --extraLightText: rgba(0, 0, 0, 0.1);
+    --superLightText: rgba(0, 0, 0, 0.1);
+    --extraLightText: rgba(0, 0, 0, 0.38);
     --lightText: rgba(0, 0, 0, 0.54);
     --darkText: rgba(0, 0, 0, 0.87);
     --semiDarkBackground: #ffffff;
     --darkBackground: #ffffff;
     --tooltipBG: rgba(155, 155, 155, 0.95);
     --fabHover: rgb(216, 216, 216);
+
+    --switchColor: #363636;
+
+    --radioBackgroundColor: rgba(0, 0, 0, 0.54);
+    --radioBackgroundColorDisabled: rgba(0, 0, 0, 0.26);
+
+    --skeletonBackground: rgba(0, 0, 0, 0.11);
+
+    --scrollbarTrack: rgba(0, 0, 0, 0.1);
+    --scrollbarThumb: rgba(0, 0, 0, 0.2);
+    --scrollbarThumbActive: rgba(0, 0, 0, 0.3);
+
+    --red50: #ffebee;
+    --red100: #ffcdd2;
+    --red200: #ef9a9a;
+    --red300: #e57373;
+    --red400: #ef5350;
+    --red500: #f44336;
+    --red600: #e53935;
+    --red700: #d32f2f;
+    --red800: #c62828;
+    --red900: #b71c1c;
+    --redA100: #ff8a80;
+    --redA200: #ff5252;
+    --redA300: #ff1744;
+    --redA400: #d50000;
+
+    --pink50: #fce4ec;
+    --pink100: #f8bbd0;
+    --pink200: #f48fb1;
+    --pink300: #f06292;
+    --pink400: #ec407a;
+    --pink500: #e91e63;
+    --pink600: #d81b60;
+    --pink700: #c2185b;
+    --pink800: #ad1457;
+    --pink900: #880e4f;
+    --pinkA100: #ff80ab;
+    --pinkA200: #ff4081;
+    --pinkA300: #f50057;
+    --pinkA400: #c51162;
+
+    --purple50: #f3e5f5;
+    --purple100: #e1bee7;
+    --purple200: #ce93d8;
+    --purple300: #ba68c8;
+    --purple400: #ab47bc;
+    --purple500: #9c27b0;
+    --purple600: #8e24aa;
+    --purple700: #7b1fa2;
+    --purple800: #6a1b9a;
+    --purple900: #4a148c;
+    --purpleA100: #ea80fc;
+    --purpleA200: #e040fb;
+    --purpleA300: #d500f9;
+    --purpleA400: #aa00ff;
+
+    --deepPurple50: #ede7f6;
+    --deepPurple100: #d1c4e9;
+    --deepPurple200: #b39ddb;
+    --deepPurple300: #9575cd;
+    --deepPurple400: #7e57c2;
+    --deepPurple500: #673ab7;
+    --deepPurple600: #5e35b1;
+    --deepPurple700: #512da8;
+    --deepPurple800: #4527a0;
+    --deepPurple900: #311b92;
+    --deepPurpleA100: #b388ff;
+    --deepPurpleA200: #7c4dff;
+    --deepPurpleA300: #651fff;
+    --deepPurpleA400: #6200ea;
+
+    --indigo50: #e8eaf6;
+    --indigo100: #c5cae9;
+    --indigo200: #9fa8da;
+    --indigo300: #7986cb;
+    --indigo400: #5c6bc0;
+    --indigo500: #3f51b5;
+    --indigo600: #3949ab;
+    --indigo700: #303f9f;
+    --indigo800: #283593;
+    --indigo900: #1a237e;
+    --indigoA100: #8c9eff;
+    --indigoA200: #536dfe;
+    --indigoA300: #3d5afe;
+    --indigoA400: #304ffe;
+    
+    --blue50: #e3f2fd;
+    --blue100: #bbdefb;
+    --blue200: #90caf9;
+    --blue300: #64b5f6;
+    --blue400: #42a5f5;
+    --blue500: #2196f3;
+    --blue600: #1e88e5;
+    --blue700: #1976d2;
+    --blue800: #1565c0;
+    --blue900: #0d47a1;
+    --blueA100: #82b1ff;
+    --blueA200: #448aff;
+    --blueA300: #2979ff;
+    --blueA400: #2962ff;
+
+    --lightBlue50: #e1f5fe;
+    --lightBlue100: #b3e5fc;
+    --lightBlue200: #81d4fa;
+    --lightBlue300: #4fc3f7;
+    --lightBlue400: #29b6f6;
+    --lightBlue500: #03a9f4;
+    --lightBlue600: #039be5;
+    --lightBlue700: #0288d1;
+    --lightBlue800: #0277bd;
+    --lightBlue900: #01579b;
+    --lightBlueA100: #80d8ff;
+    --lightBlueA200: #40c4ff;
+    --lightBlueA300: #00b0ff;
+    --lightBlueA400: #0091ea;
+
+    --cyan50: #e0f7fa;
+    --cyan100: #b2ebf2;
+    --cyan200: #80deea;
+    --cyan300: #4dd0e1;
+    --cyan400: #26c6da;
+    --cyan500: #00bcd4;
+    --cyan600: #00acc1;
+    --cyan700: #0097a7;
+    --cyan800: #00838f;
+    --cyan900: #006064;
+    --cyanA100: #84ffff;
+    --cyanA200: #18ffff;
+    --cyanA300: #00e5ff;
+    --cyanA400: #00b8d4;
+
+    --teal50: #e0f2f1;
+    --teal100: #b2dfdb;
+    --teal200: #80cbc4;
+    --teal300: #4db6ac;
+    --teal400: #26a69a;
+    --teal500: #009688;
+    --teal600: #00897b;
+    --teal700: #00796b;
+    --teal800: #00695c;
+    --teal900: #004d40;
+    --tealA100: #a7ffeb;
+    --tealA200: #64ffda;
+    --tealA300: #1de9b6;
+    --tealA400: #00bfa5;
+
+    --green50: #e8f5e9;
+    --green100: #c8e6c9;
+    --green200: #a5d6a7;
+    --green300: #81c784;
+    --green400: #66bb6a;
+    --green500: #4caf50;
+    --green600: #43a047;
+    --green700: #388e3c;
+    --green800: #2e7d32;
+    --green900: #1b5e20;
+    --greenA100: #b9f6ca;
+    --greenA200: #69f0ae;
+    --greenA300: #00e676;
+    --greenA400: #00c853;
+
+    --lightGreen50: #f1f8e9;
+    --lightGreen100: #dcedc8;
+    --lightGreen200: #c5e1a5;
+    --lightGreen300: #aed581;
+    --lightGreen400: #9ccc65;
+    --lightGreen500: #8bc34a;
+    --lightGreen600: #7cb342;
+    --lightGreen700: #689f38;
+    --lightGreen800: #558b2f;
+    --lightGreen900: #33691e;
+    --lightGreenA100: #ccff90;
+    --lightGreenA200: #b2ff59;
+    --lightGreenA300: #76ff03;
+    --lightGreenA400: #64dd17;
+
+    --lime50: #f9fbe7;
+    --lime100: #f0f4c3;
+    --lime200: #e6ee9c;
+    --lime300: #dce775;
+    --lime400: #d4e157;
+    --lime500: #cddc39;
+    --lime600: #c0ca33;
+    --lime700: #afb42b;
+    --lime800: #9e9d24;
+    --lime900: #827717;
+    --limeA100: #f4ff81;
+    --limeA200: #eeff41;
+    --limeA300: #c6ff00;
+    --limeA400: #aeea00;
+
+    --yellow50: #fffde7;
+    --yellow100: #fff9c4;
+    --yellow200: #fff59d;
+    --yellow300: #fff176;
+    --yellow400: #ffee58;
+    --yellow500: #ffeb3b;
+    --yellow600: #fdd835;
+    --yellow700: #fbc02d;
+    --yellow800: #f9a825;
+    --yellow900: #f57f17;
+    --yellowA100: #ffff8d;
+    --yellowA200: #ffff00;
+    --yellowA300: #ffea00;
+    --yellowA400: #ffd600;
+
+    --amber50: #fff8e1;
+    --amber100: #ffecb3;
+    --amber200: #ffe082;
+    --amber300: #ffd54f;
+    --amber400: #ffca28;
+    --amber500: #ffc107;
+    --amber600: #ffb300;
+    --amber700: #ffa000;
+    --amber800: #ff8f00;
+    --amber900: #ff6f00;
+    --amberA100: #ffe57f;
+    --amberA200: #ffd740;
+    --amberA300: #ffc400;
+    --amberA400: #ffab00;
+
+    --orange50: #fff3e0;
+    --orange100: #ffe0b2;
+    --orange200: #ffcc80;
+    --orange300: #ffb74d;
+    --orange400: #ffa726;
+    --orange500: #ff9800;
+    --orange600: #fb8c00;
+    --orange700: #f57c00;
+    --orange800: #ef6c00;
+    --orange900: #e65100;
+    --orangeA100: #ffd180;
+    --orangeA200: #ffab40;
+    --orangeA300: #ff9100;
+    --orangeA400: #ff6d00;
+
+    --deepOrange50: #fbe9e7;
+    --deepOrange100: #ffccbc;
+    --deepOrange200: #ffab91;
+    --deepOrange300: #ff8a65;
+    --deepOrange400: #ff7043;
+    --deepOrange500: #ff5722;
+    --deepOrange600: #f4511e;
+    --deepOrange700: #e64a19;
+    --deepOrange800: #d84315;
+    --deepOrange900: #bf360c;
+    --deepOrangeA100: #ff9e80;
+    --deepOrangeA200: #ff6e40;
+    --deepOrangeA300: #ff3d00;
+    --deepOrangeA400: #dd2c00;
+
+    --brown50: #efebe9;
+    --brown100: #d7ccc8;
+    --brown200: #bcaaa4;
+    --brown300: #a1887f;
+    --brown400: #8d6e63;
+    --brown500: #795548;
+    --brown600: #6d4c41;
+    --brown700: #5d4037;
+    --brown800: #4e342e;
+    --brown900: #3e2723;
+
+    --grey50: #fafafa;
+    --grey100: #f5f5f5;
+    --grey200: #eeeeee;
+    --grey300: #e0e0e0;
+    --grey400: #bdbdbd;
+    --grey500: #9e9e9e;
+    --grey600: #757575;
+    --grey700: #616161;
+    --grey800: #424242;
+    --grey900: #212121;
+
+    --blueGrey50: #eceff1;
+    --blueGrey100: #cfd8dc;
+    --blueGrey200: #b0bec5;
+    --blueGrey300: #90a4ae;
+    --blueGrey400: #78909c;
+    --blueGrey500: #607d8b;
+    --blueGrey600: #546e7a;
+    --blueGrey700: #455a64;
+    --blueGrey800: #37474f;
+    --blueGrey900: #263238;
+    
+    
 }
 .darkmode{
     --background: #242424;
     --color: #ffffff;
     --inputColor: #90caf9;
-    --inputBackgroundColor: #606060;
-    --inputBackgroundColorHover: #727272;
-    --buttonColor: #90caf9;
-    --buttonBoxColor: #242424;
-    --buttonBoxHover: rgb(100, 141, 174);
-    --buttonBackgroundColorHover: rgba(144, 202, 249, 0.08);
-    --buttonBorderColor: rgba(144, 202, 249, 0.5);
-    --navBar: #363636;
+    --inputBackgroundColor: rgba(255, 255, 255, 0.09);
+    --inputBackgroundColorHover: rgba(255, 255, 255, 0.13);
+
+    --ripple-blue-color: rgb(144, 202, 249);
+    --ripple-white-color: rgb(255, 255, 255);
+    --ripple-grey-color: rgb(125, 125, 125);
+    --ripple-black-color: rgb(0, 0, 0);
+    --ripple-invert-color: rgb(255, 255, 255);
+    --ripple-invert-alt-color: rgb(0, 0, 0);
+
+    --buttonColor: #fff;
+    --buttonBoxColor: rgba(0, 0, 0, 0.87);
+    --buttonBoxBackgroundColor: #e0e0e0;
+    --buttonBoxHover: #d5d5d5;
+    --buttonBackgroundColorHover: rgba(255, 255, 255, 0.08);
+    --buttonBorderColor: rgba(255, 255, 255, 0.23);
+
+    --buttonWhiteColor: #fff;
+    --buttonWhiteBackgroundColorHover: rgba(255, 255, 255, 0.08);
+    --buttonWhiteBorderColor: rgba(255, 255, 255, 0.5);
+
+    --buttonBlackColor: rgba(0, 0, 0, 0.87);
+    --buttonBlackBackgroundColorHover: rgba(0, 0, 0, 0.08);
+    --buttonBlackBorderColor: rgba(0, 0, 0, 0.23);
+
+    --buttonDefaultColor: #fff;;
+    --buttonDefaultBoxColor: rgba(0, 0, 0, 0.87);
+    --buttonDefaultBoxHover: #d5d5d5;
+    --buttonDefaultBackgroundColorHover: rgba(255, 255, 255, 0.08);
+    --buttonDefaultBorderColor: rgba(255, 255, 255, 0.23);
+
+    --buttonDisabledColor: rgba(255, 255, 255, 0.3);
+    --buttonDisabledBackgroundColor: rgba(255, 255, 255, 0.12);
+
     --iconButtonHover: rgba(255, 255, 255, 0.1);
+    --iconButtonColor: rgba(255, 255, 255, 0.54);
+
+    --switchBackgroundColorHover: rgba(255, 255, 255, 0.08);
+    --navBar: #363636;
     --menuButtonHover: rgba(255, 255, 255, 0.05);
-    --extraLightText: rgba(255, 255, 255, 0.1);
+    --superLightText: rgba(255, 255, 255, 0.1);
+    --extraLightText: rgba(255, 255, 255, 0.38);
     --lightText: rgba(255, 255, 255, 0.54);
     --darkText: rgba(255, 255, 255, 0.87);
     --semiDarkBackground: #424242;
     --darkBackground: #363636;
     --tooltipBG: rgba(100, 100, 100, 0.95);
     --fabHover: rgb(94, 94, 94);
+
+    --switchColor: #eeeeee;
+
+    --radioBackgroundColor: rgba(255, 255, 255, 0.7);
+    --radioBackgroundColorDisabled: rgba(255, 255, 255, 0.3);
+
+    --skeletonBackground: rgba(255, 255, 255, 0.13);
+
+    --scrollbarTrack: rgba(0, 0, 0, 0.6);
+    --scrollbarThumb: rgba(255, 255, 255, 0.2);
+    --scrollbarThumbActive: rgba(255, 255, 255, 0.3);
 }
 body{
     background-color: var(--background);
@@ -48,6 +407,7 @@ body{
     color: var(--color);
     margin: 0;
     transition: background-color 150ms, color 150ms;
+    margin-bottom: 20px;
 }
 nav{
     display: flex;
@@ -56,6 +416,7 @@ nav{
     min-height: 60px;
     width: 100%;
     background-color: var(--navBar);
+    transition: 150ms;
 }
 main{
     display: flex;
@@ -233,23 +594,26 @@ main{
 }
 .input-underline-box::before{
     content: '';
+    pointer-events: none;
     position: absolute;
-    bottom: -1px;
+    bottom: 0px;
     left: 0;
     background-color: #bdbdbd;
     width: 100%;
     height: 1px;
+    transform-origin: bottom;
+    transform: scaleY(1);
     transition: 150ms;
 }
 .input-underline-box:hover::before{
-    bottom: -2px;
-    height: 2px;
+    transform: scaleY(2);
     background-color: var(--color);
 }
 .input-underline-box::after{
     content: '';
+    pointer-events: none;
     position: absolute;
-    bottom: -2px;
+    bottom: 0px;
     left: 0;
     background-color: var(--inputColor); /*90caf9 for darkmode*/
     width: 100%;
@@ -336,7 +700,7 @@ main{
 }*/
 
 .shadow-0{
-    border: 1px solid rgba(0, 0, 0, 0.12); /*rgba(255, 255, 255, 0.12) for darkmode*/
+    border: 1px solid var(--buttonDisabledBackgroundColor); /*rgba(255, 255, 255, 0.12) for darkmode*/
 }
 .shadow-1{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
@@ -349,6 +713,9 @@ main{
 }
 
 .button-none{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
     outline: 0;
     font-weight: 700;
@@ -368,7 +735,11 @@ main{
 .button-none:hover{
     background-color: var(--buttonBackgroundColorHover);
 }
+
 .button-outline{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
     outline: 0;
     font-weight: 700;
@@ -387,10 +758,14 @@ main{
     min-width: 65px;
 }
 .button-outline:hover{
-    border-color: var(--buttonColor);
+    border-color: var(--buttonBorderColor);
     background-color: var(--buttonBackgroundColorHover);
 }
+
 .button-box{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
     outline: 0;
     font-weight: 700;
@@ -399,7 +774,7 @@ main{
     letter-spacing: 0.02857em;
     color: var(--buttonBoxColor);
     text-transform: uppercase;
-    background-color: var(--buttonColor);
+    background-color: var(--buttonBoxBackgroundColor);
     user-select: none;
     border-radius: 4px;
     padding: 6px 16px;
@@ -417,70 +792,75 @@ main{
 }
 
 .button-none-slim{
-    border: 0;
-    outline: 0;
-    font-weight: 700;
     font-size: 0.8125rem;
-    line-height: 1.75;
-    letter-spacing: 0.02857em;
-    color: var(--buttonColor);
-    text-transform: uppercase;
-    background-color: transparent;
-    user-select: none;
-    border-radius: 4px;
     padding: 3px 9px;
-    transition: 300ms;
-    cursor: pointer;
-    min-width: 65px;
 }
 .button-none-slim:hover{
     background-color: var(--buttonBackgroundColorHover);
 }
 .button-outline-slim{
-    border: 0;
-    outline: 0;
-    font-weight: 700;
     font-size: 0.8125rem;
-    line-height: 1.75;
-    letter-spacing: 0.02857em;
-    color: var(--buttonColor);
-    text-transform: uppercase;
-    background-color: transparent;
-    user-select: none;
-    border-radius: 4px;
-    border: 1px solid var(--buttonBorderColor);
     padding: 2px 8px;
-    transition: 300ms;
-    cursor: pointer;
-    min-width: 65px;
 }
 .button-outline-slim:hover{
-    border-color: var(--buttonColor);
+    border-color: var(--buttonBorderColor);
     background-color: var(--buttonBackgroundColorHover);
 }
 .button-box-slim{
-    border: 0;
-    outline: 0;
-    font-weight: 700;
     font-size: 0.8125rem;
-    line-height: 1.75;
-    letter-spacing: 0.02857em;
-    color: var(--buttonBoxColor);
-    text-transform: uppercase;
-    background-color: var(--buttonColor);
-    user-select: none;
-    border-radius: 4px;
     padding: 3px 9px;
-    transition: 300ms;
-    cursor: pointer;
-    min-width: 65px;
-    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
 }
 .button-box-slim:active{
     box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
 }
 .button-box-slim:hover{
     background-color: var(--buttonBoxHover);
+}
+
+.button-none-white{
+    color: var(--buttonWhiteColor);
+}
+.button-none-white:hover{
+    background-color: var(--buttonWhiteBackgroundColorHover);
+}
+.button-none-black{
+    color: var(--buttonBlackColor);
+}
+.button-none-black:hover{
+    background-color: var(--buttonBlackBackgroundColorHover);
+}
+.button-none-disabled{
+    color: var(--buttonDisabledColor);
+    pointer-events: none;
+}
+
+.button-outline-white{
+    color: var(--buttonWhiteColor);
+    border: 1px solid var(--buttonWhiteBorderColor); 
+}
+.button-outline-white:hover{
+    border-color: var(--buttonWhiteBorderColor); 
+    background-color: var(--buttonWhiteBackgroundColorHover);
+}
+.button-outline-black{
+    color: var(--buttonBlackColor);
+    border: 1px solid var(--buttonBlackBorderColor); 
+}
+.button-outline-black:hover{
+    border-color: var(--buttonBlackBorderColor); 
+    background-color: var(--buttonBlackBackgroundColorHover);
+}
+.button-outline-disabled{
+    border-color: var(--buttonDisabledBackgroundColor); 
+    color: var(--buttonDisabledColor);
+    pointer-events: none;
+}
+
+.button-box-disabled{
+    background-color: var(--buttonDisabledBackgroundColor);
+    color: var(--buttonDisabledColor);
+    box-shadow: none;
+    pointer-events: none;
 }
 /*
 .icon-btn{
@@ -517,7 +897,8 @@ main{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: var(--lightText);
+    color: var(--iconButtonColor);
+    transition: 300ms;
 }
 .button-icon span{
     pointer-events: none;
@@ -534,8 +915,8 @@ main{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: var(--lightText);
-    transition: background-color 300ms;
+    color: var(--iconButtonColor);
+    transition: 300ms;
 }
 .button-icon-filled span{
     pointer-events: none;
@@ -551,7 +932,6 @@ main{
 .menu-box{
     position: absolute;
     z-index: 1000;
-    left: 0;
     max-height: 300px;
     width: auto;
     overflow: auto;
@@ -565,11 +945,16 @@ main{
     transform-origin: top left;
     transform: scale(0.75, 0.5625);
     opacity: 0;
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
     transition: 150ms;
     visibility: hidden;
 }
 .menu-box::-webkit-scrollbar{
     display: none;
+}
+.menu-box-inverted{
+    transform-origin: top right;
+    right: 0;
 }
 .menu-box button{
     display: flex;
@@ -603,10 +988,79 @@ main{
 .menu-box button:hover{
     background-color: var(--menuButtonHover); /*#484848 darkmode*/
 }
-
 .show-menu{
     visibility: visible;
     transform: scale(1);
+    opacity: 1;
+}
+
+.select{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.select-menu{
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    left: 50%;
+    max-height: 300px;
+    min-width: 120px;
+    width: auto;
+    overflow: auto;
+    background-color: var(--semiDarkBackground);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+    transform-origin: top left;
+    transform: scaleY(0.5625) translateX(-50%);
+    opacity: 0;
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+    transition: 150ms;
+    visibility: hidden;
+}
+.select-menu::-webkit-scrollbar{
+    display: none;
+}
+.select-menu button{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 6px 16px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: nowrap;
+    letter-spacing: 0.00938em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--color);
+    background-color: var(--semiDarkBackground);
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 150ms;
+}
+.select-menu button:first-child{
+    margin-top: 8px;
+}
+.select-menu button:last-child{
+    margin-bottom: 8px;
+}
+.select-menu button:hover{
+    background-color: var(--menuButtonHover); /*#484848 darkmode*/
+}
+.show-select-menu{
+    visibility: visible;
+    transform: scaleY(1) translateX(-50%);
     opacity: 1;
 }
 
@@ -746,6 +1200,8 @@ main{
     background-color: var(--buttonColor);
     box-shadow: 0 0 0 0 transparent;
     color: var(--background);
+    --ripple-invert-color: var(--ripple-invert-alt-color);
+    --ripple-invert-start-color: var(--ripple-invert-alt-start-color);
     transition: 300ms;
 }
 .numbers-row-item-active:hover{
@@ -922,8 +1378,11 @@ main{
 
 .ripple, .ripple-white, .ripple-blue, .ripple-center{
     position: relative;
-}
-.ripple-box{
+  }
+  .ripple *, .ripple-center *{
+    pointer-events: none;
+  }
+  .ripple-box{
     top: 0;
     left: 0;
     right: 0;
@@ -933,73 +1392,49 @@ main{
     position: absolute;
     border-radius: inherit;
     pointer-events: none;
-}
-.ripple-effect {
-    width: 2px;
-    height: 2px;
-    position: absolute;
-    transform: translate(-50%,-50%) scale(var(--scale));
-    background-color: var(--rippleColor); 
-    border-radius: 50%;
-    animation: rippleEffect 550ms cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1;
-}
-@keyframes rippleEffect {
-    0% {
-        transform: translate(-50%,-50%) scale(1);
-        background-color: var(--rippleColorStart);
-    }
-    100%{
-        transform: translate(-50%,-50%) scale(var(--scale));
-        background-color: var(--rippleColor); 
-    }
-}
-/*
-.ripple-effect-white {
-    width: 2px;
-    height: 2px;
-    position: absolute;
-    transform: translate(-50%,-50%) scale(var(--scale));
-    background-color: rgba(255, 255, 255, 0.3); 
-    border-radius: 50%;
-    animation: rippleEffectWhite 550ms cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1;
-}
-@keyframes rippleEffectWhite {
-    0% {
-        transform: translate(-50%,-50%) scale(1);
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-    100%{
-        transform: translate(-50%,-50%) scale(var(--scale));
-        background-color: rgba(255, 255, 255, 0.3); 
-    }
-}
-
-.ripple-effect-blue{
-    width: 2px;
-    height: 2px;
-    position: absolute;
-    transform: translate(-50%,-50%) scale(var(--scale));
-    background-color: rgba(25, 118, 210, 0.3);
-    border-radius: 50%;
-    animation: rippleEffectBlue 550ms cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 1;
-}
-@keyframes rippleEffectBlue {
-    0% {
-        transform: translate(-50%,-50%) scale(1);
-        background-color: rgba(25, 118, 210, 0.1);
-    }
-    100%{
-        transform: translate(-50%,-50%) scale(var(--scale));
-        background-color: rgba(25, 118, 210, 0.3);
-    }
-}*/
-.ripple-effect-out{
+  }
+  .ripple-effect{
     opacity: 0;
-    transition: 550ms;
-}
+    position: absolute;
+    width: inherit;
+    height: inherit;
+  }
+  .ripple-effect-visible {
+    opacity: 0.3;
+    animation: ripple-effect-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+  }
+  .ripple-effect-child {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 1;
+    border-radius: 50%;
+    background-color: var(--rippleColor);
+    transition: background-color 150ms ease-in-out;
+  }
+  .ripple-effect-child-leaving {
+    opacity: 0;
+    animation: ripple-effect-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @keyframes ripple-effect-enter {
+    0% {
+      opacity: 0.1;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+  }
+  @keyframes ripple-effect-exit {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 
 .action-button-container{
     position: fixed;
@@ -1218,30 +1653,19 @@ main{
 }
 
 
-.tabs-container{
-    display: flex;
-    flex-direction: column;
+.tabs-selector-container{
+    display: inline-flex;
     justify-content: center;
-    width: auto;
-    /*
-    Ripple funker ikke ved bestemt width
-    align-items: flex-start;
-    overflow-x: scroll;
-    width: 500px;
-    position: relative
-    */
-}
-.tabs-container::-webkit-scrollbar{
-    display: none;
+    align-items: center;
+    position: relative;
 }
 .tabs{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
 }
 .tab{
-    padding: 15px 30px;
+    padding: 15px 35px;
     color: var(--lightText);
     text-decoration: none;
     text-transform: uppercase;
@@ -1249,128 +1673,50 @@ main{
     cursor: pointer;
     min-width: 65px;
     text-align: center;
-    font-weight: 700;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    white-space: nowrap;
     transition: 300ms;
 }
-.tab-indicator-container{
-    position: relative;
-    width: 100%;
+.disabled-tab{
+    pointer-events: none;
+    cursor: default;
+    color: var(--extraLightText);
 }
 .tab-indicator{
-    content: "";
+    content: '';
     position: absolute;
-    width: 0;
-    height: 2px;
     bottom: 0;
     left: 0;
+    width: 100%;
+    height: 2px;
     background-color: var(--buttonColor);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: 300ms;
 }
 .active-tab{
     color: var(--buttonColor);
-    background-color: var(--buttonBackgroundColorHover);
     transition: 300ms;
 }
 .tabs-content-container{
-    width: 90%;
+    position: relative;
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
+    width: 1200px;
+    height: 500px;
+    overflow: hidden;
 }
-.tabs-content-container *{
-    display: none;
-}
-.active-content-tab{
+.content-tab{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: block;
-}
-.tabs-slide-from-left{
-    display: block;
-    position: relative;
-    animation: tabsSlideFromLeft 500ms ease-in-out;
-}
-@keyframes tabsSlideFromLeft{
-    0%{
-        transform: translateX(-2000px);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-.tabs-slide-from-right{
-    display: block;
-    position: relative;
-    animation: tabsSlideFromRight 500ms ease-in-out;
-}
-@keyframes tabsSlideFromRight{
-    0%{
-        transform: translateX(2000px);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-.tabs-slide-out-to-left{
-    display: block;
-    position: relative;
-    animation: tabsSlideOutFromLeft 500ms ease-in-out;
-}
-@keyframes tabsSlideOutFromLeft{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(-2000px);
-    }
-}
-.tabs-slide-out-to-right{
-    display: block;
-    position: relative;
-    animation: tabsSlideOutFromRight 500ms ease-in-out;
-}
-@keyframes tabsSlideOutFromRight{
-    0%{
-        transform: translateX(0);
-    }
-    100%{
-        transform: translateX(2000px);
-    }
-}
-/*
-WIP advanced sliding animation
-*/
-/*
-.animating-indicator-right{
-    animation: animateIndicatorRight 500ms ease-in-out forwards;
-}
-@keyframes animateIndicatorRight {
-    0%{
-        left: var(--currentLeft);
-    }
-    50%{
-        left: var(--currentLeft);
-        width: calc(var(--newLeft) - var(--currentLeft) + var(--newWidth));
-    }
-    100%{
-        left: var(--newLeft);
-        width: var(--newWidth);
-    }
-}*/
-
-/*
-Simple sliding aniamtion
-*/
-
-.animating-indicator{
-    animation: animateIndicator 500ms ease-in-out forwards;
-}
-@keyframes animateIndicator {
-    0%{
-        left: var(--currentLeft);
-    }
-    100%{
-        left: var(--newLeft);
-        width: var(--newWidth);
-    }
 }
 
 .tooltip{
@@ -1397,12 +1743,12 @@ Simple sliding aniamtion
     transition: 150ms ease-in-out;
 }
 .tooltip-top{
-    top: -40px;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%) scale(0.75);
 }
 .tooltip-bottom{
-    bottom: -40px;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%) scale(0.75);
 }
@@ -1491,38 +1837,53 @@ Simple sliding aniamtion
 
 .switch-container{
     user-select: none;
-    padding: 5px;
+    padding: 10px;
 }
 .switch{
     width: 36px;
     border-radius: 36px;
     height: 14px;
-    background-color: var(--extraLightText); /*rgba(255,255,255,0.12) for darkmode*/
+    background-color: var(--superLightText); /*rgba(255,255,255,0.12) for darkmode*/
     position: relative;
     cursor: pointer;
     transition: 150ms ease-in-out;
 }
-.switch::before{
-    content: '';
+.switch-head-container{
     position: absolute;
     top: 50%;
-    left: 0%;
-    transform: translateY(-50%);
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 50%;
+    transition: 150ms ease-in-out;
+}
+.switch-head-container:hover{
+    background-color: var(--switchBackgroundColorHover);
+}
+.switch-active .switch-head-container{
+    left: 75%;
+}
+.switch-active .switch-head-container:hover{
+    background-color: var(--buttonBackgroundColorHover);
+}
+.switch-head{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 20px;
     height: 20px;
     background-color: #969696; /*#727272 for darkmode*/
     border-radius: 50%;
-    transition: 150ms ease-in-out;
 }
-.switch-active::before{
-    left: 50%;
-    background-color: var(--buttonColor);
+.switch-active .switch-head{
+    background-color: var(--switchColor);
 }
 
 
 .modal-container{
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     top: 0;
     left: 0;
     width: 100%;
@@ -1535,12 +1896,12 @@ Simple sliding aniamtion
     background-color: rgba(0, 0, 0, 0.5);
 }
 .modal{
-    position: inherit;
+    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 300px;
     min-height: 200px;
-    background-color: var(--background); /*#363636 for darkmode*/
+    background-color: var(--darkBackground); /*#363636 for darkmode*/
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -1727,7 +2088,7 @@ Simple sliding aniamtion
 
 hr.divider-1{
     border: none;
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: var(--buttonDisabledBackgroundColor);
     height: 1px;
     width: 100%;
     margin: 0;
@@ -1735,13 +2096,13 @@ hr.divider-1{
 }
 hr.divider-2{
     border: none;
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: var(--buttonDisabledBackgroundColor);
     height: 2px;
     width: 100%;
 }
 hr.divider-3{
     border: none;
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: var(--buttonDisabledBackgroundColor);
     height: 3px;
     width: 100%;
 }
@@ -1958,80 +2319,80 @@ hr.divider-3{
     font-size: 6rem;
     font-weight: 300;
     line-height: 1.167;
-    letter-spacing: -0.01562em;
+    letter-spacing: -0.09375rem;
 }
 .h2-txt{
     font-size: 3.75rem;
     font-weight: 300;
     line-height: 1.2;
-    letter-spacing: -0.00833em;
+    letter-spacing: -0.03125rem;
 }
 .h3-txt{
     font-size: 3rem;
     font-weight: 400;
     line-height: 1.167;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 }
 .h4-txt{
     font-size: 2.125rem;
     font-weight: 400;
     line-height: 1.235;
-    letter-spacing: 0.00735em;
+    letter-spacing: 0.015625rem;
 }
 .h5-txt{
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.334;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 }
 .h6-txt{
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 1.6;
-    letter-spacing: 0.0075em;
+    letter-spacing: 0.009375rem;
 }
 .sub1-txt{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.75;
-    letter-spacing: 0.00938em;
+    letter-spacing: 0.009375rem;
 }
 .sub2-txt{
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.57;
-    letter-spacing: 0.00714em;
+    letter-spacing: 0.00625rem;
 }
 .body1-txt{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    letter-spacing: 0.00938em;
+    letter-spacing: 0.03125rem;
 }
 .body2-txt{
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.43;
-    letter-spacing: 0.01071em;
+    letter-spacing: 0.015625rem;
 }
 .button-txt{
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.75;
-    letter-spacing: 0.02857em;
+    letter-spacing: 0.078125rem;
     text-transform: uppercase;
 }
 .caption-txt{
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.66;
-    letter-spacing: 0.03333em;
+    letter-spacing: 0.025rem;
 }
 .overline-txt{
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     font-weight: 400;
     line-height: 2.66;
-    letter-spacing: 0.08333em;
+    letter-spacing: 0.09375rem;
     text-transform: uppercase;
 }
 
@@ -2043,7 +2404,6 @@ hr.divider-3{
     overflow-x: hidden;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.0);
     transition: 150ms;
     visibility: hidden;
 }
@@ -2053,7 +2413,7 @@ hr.divider-3{
     left: -250px;
     height: 100%;
     width: 250px;
-    background-color: var(--background);
+    background-color: var(--darkBackground);
     transition: 300ms;
 }
 .show-drawer{
@@ -2065,4 +2425,419 @@ hr.divider-3{
 }
 .no-scroll{
     overflow: hidden;
+}
+
+
+
+/*SKELETON*/
+.profile-img-skeleton{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--skeletonBackground);
+}
+.line-skeleton{
+    height: 6px;
+    width: 250px;
+    border-radius: 3px;
+    background-color: var(--skeletonBackground);
+}
+.small-txt-skeleton{
+    height: 12px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: var(--skeletonBackground);
+}
+.medium-txt-skeleton{
+    height: 16px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: var(--skeletonBackground);
+}
+.large-txt-skeleton{
+    height: 32px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: var(--skeletonBackground);
+}
+.title-txt-skeleton{
+    height: 64px;
+    width: 250px;
+    border-radius: 4px;
+    background-color: var(--skeletonBackground);
+}
+.box-skeleton{
+    height: 196px;
+    width: 350px;
+    border-radius: 4px;
+    background-color: var(--skeletonBackground);
+}
+
+.skeleton-pulse{
+    animation: skeletonPulse 1.5s ease-in-out 0.5s infinite;
+}
+@keyframes skeletonPulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.skeleton-wave {
+    overflow: hidden;
+    position: relative;
+}
+.skeleton-wave::after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    animation: skeleton-wave 1.6s linear 0.5s infinite;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, var(--buttonWhiteBackgroundColorHover), transparent);
+}
+@keyframes skeleton-wave {
+    0% {
+        transform: translateX(-100%);
+    }
+    60% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.stepper-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 300px;
+    overflow: hidden;
+}
+.stepper-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+}
+.stepper-content-tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--switchBackgroundColorHover);
+    margin: 5px 0;
+    width: 300px;
+    height: 150px;
+}
+.active-stepper-tab{
+    
+}
+.stepper-indicator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 3px;
+}
+.stepper-indicator-dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: var(--buttonDisabledColor);
+    transition: 300ms;
+}
+.active-stepper-dot{
+    background-color: var(--buttonColor);
+}
+.stepper-button-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+  
+.radio-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.radio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.radio-disabled{
+    user-select: none;
+    pointer-events: none;
+}
+.radio-disabled .radio-button-circle{
+    border-color: var(--radioBackgroundColorDisabled);
+}
+.radio-disabled .radio-txt{
+    color: var(--radioBackgroundColorDisabled);
+}
+.radio-button{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.radio-button-circle{
+    pointer-events: none;
+    user-select: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--radioBackgroundColor);
+    border-radius: 50%;
+    position: relative;
+}
+.radio-button-dot{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform-origin: top left;
+    transform: scale(0) translate(-50%, -50%);
+    transition: 150ms;
+}
+
+.radio-active .radio-button-dot{
+    background-color: var(--radioBackgroundColor);
+    transform: scale(1) translate(-50%, -50%);
+}
+
+/*LAYOUT*/
+.row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.l1{
+    width: 8.334%;
+    box-sizing: border-box;
+}
+.l2{
+    width: 16.668%;
+    box-sizing: border-box;
+}
+.l3{
+    width: 25%;
+    box-sizing: border-box;
+}
+.l4{
+    width: 33.336%;
+    box-sizing: border-box;
+}
+.l5{
+    width: 41.67%;
+    box-sizing: border-box;
+}
+.l6{
+    width: 50%;
+    box-sizing: border-box;
+}
+.l7{
+    width: 58.338%;
+    box-sizing: border-box;
+}
+.l8{
+    width: 66.672%;
+    box-sizing: border-box;
+}
+.l9{
+    width: 75%;
+    box-sizing: border-box;
+}
+.l10{
+    width: 83.34%;
+    box-sizing: border-box;
+}
+.l11{
+    width: 91.674%;
+    box-sizing: border-box;
+}
+.l12{
+    width: 100%;
+    box-sizing: border-box;
+}
+@media (max-width: 1200px){
+    .m1{
+        width: 8.334%;
+        box-sizing: border-box;
+    }
+    .m2{
+        width: 16.668%;
+        box-sizing: border-box;
+    }
+    .m3{
+        width: 25%;
+        box-sizing: border-box;
+    }
+    .m4{
+        width: 33.336%;
+        box-sizing: border-box;
+    }
+    .m5{
+        width: 41.67%;
+        box-sizing: border-box;
+    }
+    .m6{
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .m7{
+        width: 58.338%;
+        box-sizing: border-box;
+    }
+    .m8{
+        width: 66.672%;
+        box-sizing: border-box;
+    }
+    .m9{
+        width: 75%;
+        box-sizing: border-box;
+    }
+    .m10{
+        width: 83.34%;
+        box-sizing: border-box;
+    }
+    .m11{
+        width: 91.674%;
+        box-sizing: border-box;
+    }
+    .m12{
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 900px){
+    .s1{
+        width: 8.334%;
+        box-sizing: border-box;
+    }
+    .s2{
+        width: 16.668%;
+        box-sizing: border-box;
+    }
+    .s3{
+        width: 25%;
+        box-sizing: border-box;
+    }
+    .s4{
+        width: 33.336%;
+        box-sizing: border-box;
+    }
+    .s5{
+        width: 41.67%;
+        box-sizing: border-box;
+    }
+    .s6{
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .s7{
+        width: 58.338%;
+        box-sizing: border-box;
+    }
+    .s8{
+        width: 66.672%;
+        box-sizing: border-box;
+    }
+    .s9{
+        width: 75%;
+        box-sizing: border-box;
+    }
+    .s10{
+        width: 83.34%;
+        box-sizing: border-box;
+    }
+    .s11{
+        width: 91.674%;
+        box-sizing: border-box;
+    }
+    .s12{
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 600px){
+    .xs1{
+        width: 8.334%;
+        box-sizing: border-box;
+    }
+    .xs2{
+        width: 16.668%;
+        box-sizing: border-box;
+    }
+    .xs3{
+        width: 25%;
+        box-sizing: border-box;
+    }
+    .xs4{
+        width: 33.336%;
+        box-sizing: border-box;
+    }
+    .xs5{
+        width: 41.67%;
+        box-sizing: border-box;
+    }
+    .xs6{
+        width: 50%;
+        box-sizing: border-box;
+    }
+    .xs7{
+        width: 58.338%;
+        box-sizing: border-box;
+    }
+    .xs8{
+        width: 66.672%;
+        box-sizing: border-box;
+    }
+    .xs9{
+        width: 75%;
+        box-sizing: border-box;
+    }
+    .xs10{
+        width: 83.34%;
+        box-sizing: border-box;
+    }
+    .xs11{
+        width: 91.674%;
+        box-sizing: border-box;
+    }
+    .xs12{
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.scrollbar::-webkit-scrollbar{
+    width: 17px;
+    
+}
+.scrollbar::-webkit-scrollbar-track{
+    background-color:var(--scrollbarTrack);
+}
+.scrollbar::-webkit-scrollbar-thumb{
+    border: 2px solid transparent;
+    background-clip: content-box;
+    background-color: var(--scrollbarThumb);
+}
+.scrollbar::-webkit-scrollbar-thumb:active{
+    background-color: var(--scrollbarThumbActive);
 }

@@ -1,3 +1,401 @@
+//CUSTOM THEME CONSTRUCTOR
+//DEFAULT CUSTOM THEMES
+const theme = {
+  mainTheme: {
+    light: {
+      color: '#1976d2',
+
+      rippleColor: 'rgb(25, 118, 210)',
+      rippleInvertColor: 'rgb(255, 255, 255)',
+      rippleDefaultColor: 'rgb(255, 255, 255)',
+
+      button: {
+        buttonBackgroundColorHover: 'rgba(25, 118, 210, 0.08)',
+        buttonBoxFontColor: '#fff',
+        buttonBoxBackgroundColorHover: 'rgb(17, 82, 147)',
+        buttonBorderColor: 'rgba(25, 118, 210, 0.5)',
+      },
+
+      iconButton: {
+        iconButtonColor: 'rgb(25, 118, 210)',
+        iconButtonHover: 'rgba(25, 118, 210, 0.08)',
+      },
+
+      iconButtonDefault: {
+        iconButtonColor: '#fff',
+        iconButtonHover: 'rgba(0, 0, 0, 0.08)',
+      },
+
+      input: {
+
+      },
+
+      tab: {
+        
+      },
+      switch: {
+        switchColor: 'rgb(25, 118, 210)',
+        switchHoverColor: 'rgba(25, 118, 210, 0.08)',
+      },
+      radio: {
+        radioBackgroundColorHover: 'rgba(25, 118, 210, 0.08)',
+      },
+    },
+    dark: {
+      color: '#90caf9',
+
+      rippleColor: 'rgb(144, 202, 249)',
+      rippleInvertColor: 'rgb(0, 0, 0)',
+      rippleDefaultColor: 'rgb(255, 255, 255)',
+
+      button: {
+        buttonBackgroundColorHover: 'rgba(144, 202, 249, 0.08)',
+        buttonBoxFontColor: 'rgba(0, 0, 0, 0.87)',
+        buttonBoxBackgroundColorHover: 'rgb(100, 141, 174)',
+        buttonBorderColor: 'rgba(144, 202, 249, 0.5)',
+      },
+
+      iconButton: {
+        iconButtonColor: 'rgb(144, 202, 249)',
+        iconButtonHover: 'rgba(144, 202, 249, 0.08)',
+      },
+
+      iconButtonDefault: {
+        iconButtonColor: '#fff',
+        iconButtonHover: 'rgba(255, 255, 255, 0.08)',
+      },
+
+      input: {
+
+      },
+
+      tab: {
+        
+      },
+      switch: {
+        switchColor: 'rgb(144, 202, 249)',
+        switchHoverColor: 'rgba(144, 202, 249, 0.08)',
+      },
+      radio: {
+        radioBackgroundColorHover: 'rgba(144, 202, 249, 0.08)',
+      },
+    }
+  },
+  secondTheme: {
+    light: {
+
+    },
+    dark: {
+
+    }
+  }
+}
+
+window.onload = () => {
+  themeConstructor(theme);
+}
+
+const themeConstructor = (theme) => {
+  let head = document.querySelector('head');
+  let sheet = document.querySelector('[name="custom-theme"]');
+  if(sheet == null){
+    let sheet = document.createElement('style');
+    sheet.setAttribute('name', 'custom-theme');
+    sheet.innerHTML = `
+      :root{
+        --main-theme-ripple-color: ${theme.mainTheme.light.rippleColor};
+        --second-theme-ripple-color: ${theme.secondTheme.light.rippleColor};
+        --main-theme-ripple-invert-color: ${theme.mainTheme.light.rippleInvertColor};
+        --second-theme-ripple-invert-color: ${theme.secondTheme.light.rippleInvertColor};
+        --main-theme-ripple-default-color: ${theme.mainTheme.light.rippleDefaultColor};
+        --second-theme-ripple-default-color: ${theme.secondTheme.light.rippleDefaultColor};
+        --navBar: ${theme.mainTheme.light.color};
+        --inputColor: ${theme.mainTheme.light.color};
+      }
+      .darkmode{
+        --main-theme-ripple-color: ${theme.mainTheme.dark.rippleColor};
+        --second-theme-ripple-color: ${theme.secondTheme.dark.rippleColor};
+        --main-theme-ripple-invert-color: ${theme.mainTheme.dark.rippleInvertColor};
+        --second-theme-ripple-invert-color: ${theme.secondTheme.dark.rippleInvertColor};
+        --main-theme-ripple-default-color: ${theme.mainTheme.dark.rippleDefaultColor};
+        --second-theme-ripple-default-color: ${theme.secondTheme.dark.rippleDefaultColor};
+        --inputColor: ${theme.mainTheme.dark.color};
+      }
+
+      .button-main-theme-none{
+        color: ${theme.mainTheme.light.color};
+      }
+      .button-main-theme-none:hover{
+        background-color: ${theme.mainTheme.light.button.buttonBackgroundColorHover};
+      }
+      .darkmode .button-main-theme-none{
+        color: ${theme.mainTheme.dark.color};
+      }
+      .darkmode .button-main-theme-none:hover{
+        background-color: ${theme.mainTheme.dark.button.buttonBackgroundColorHover};
+      }
+      .button-main-theme-outline{
+        color: ${theme.mainTheme.light.color};
+        border-color: ${theme.mainTheme.light.button.buttonBorderColor};
+      }
+      .button-main-theme-outline:hover{
+        background-color: ${theme.mainTheme.light.button.buttonBackgroundColorHover};
+        border-color: ${theme.mainTheme.light.color};
+      }
+      .darkmode .button-main-theme-outline{
+        color: ${theme.mainTheme.dark.color};
+        border-color: ${theme.mainTheme.dark.button.buttonBorderColor};
+      }
+      .darkmode .button-main-theme-outline:hover{
+        background-color: ${theme.mainTheme.dark.button.buttonBackgroundColorHover};
+        border-color: ${theme.mainTheme.dark.color};
+      }
+      .button-main-theme-box{
+        color: ${theme.mainTheme.light.button.buttonBoxFontColor};
+        background-color: ${theme.mainTheme.light.color};
+      }
+      .button-main-theme-box:hover{
+        background-color: ${theme.mainTheme.light.button.buttonBoxBackgroundColorHover};
+      }
+      .darkmode .button-main-theme-box{
+        color: ${theme.mainTheme.dark.button.buttonBoxFontColor};
+        background-color: ${theme.mainTheme.dark.color};
+      }
+      .darkmode .button-main-theme-box:hover{
+        background-color: ${theme.mainTheme.dark.button.buttonBoxBackgroundColorHover};
+      }
+
+      .button-icon-main-theme{
+        color: ${theme.mainTheme.light.iconButton.iconButtonColor}
+      }
+      .button-icon-main-theme:hover{
+        background-color: ${theme.mainTheme.light.iconButton.iconButtonHover}
+      }
+      .darkmode .button-icon-main-theme{
+        color: ${theme.mainTheme.dark.iconButton.iconButtonColor}
+      }
+      .darkmode .button-icon-main-theme:hover{
+        background-color: ${theme.mainTheme.dark.iconButton.iconButtonHover}
+      }
+
+      .button-icon-default-main-theme{
+        color: ${theme.mainTheme.light.iconButtonDefault.iconButtonColor};  
+      }
+      .button-icon-default-main-theme:hover{
+        background-color: ${theme.mainTheme.light.iconButtonDefault.iconButtonHover};  
+      }
+      .darkmode .button-icon-default-main-theme{
+        color: ${theme.mainTheme.dark.iconButtonDefault.iconButtonColor};  
+      }
+      .darkmode .button-icon-default-main-theme:hover{
+        background-color: ${theme.mainTheme.dark.iconButtonDefault.iconButtonHover};  
+      }
+
+      .switch-main-theme .switch-active{
+        --ripple-invert-color: ${theme.mainTheme.light.rippleColor}
+      }
+      .switch-main-theme .switch-active .switch-head{
+        background-color: ${theme.mainTheme.light.switch.switchColor};
+      }
+      .switch-main-theme .switch-active:hover .switch-head-container{
+        background-color: ${theme.mainTheme.light.switch.switchHoverColor};
+      }
+      .darkmode .switch-main-theme .switch-active{
+        --ripple-invert-color: ${theme.mainTheme.dark.rippleColor}
+      }
+      .darkmode .switch-main-theme .switch-active .switch-head{
+        background-color: ${theme.mainTheme.dark.switch.switchColor};
+      }
+      .darkmode .switch-main-theme .switch-active:hover .switch-head-container{
+        background-color: ${theme.mainTheme.dark.switch.switchHoverColor};
+      }
+
+      .radio-button-main-theme:hover{
+        background-color: ${theme.mainTheme.light.radio.radioBackgroundColorHover};
+      }
+      .radio-active .radio-button-main-theme{
+        --ripple-invert-color: ${theme.mainTheme.light.rippleColor};
+      }
+      .radio-active .radio-button-main-theme .radio-button-circle{
+        border-color: ${theme.mainTheme.light.color};
+      }
+      .radio-active .radio-button-main-theme .radio-button-dot{
+        background-color: ${theme.mainTheme.light.color};
+      }
+      .darkmode .radio-button-main-theme:hover{
+        background-color: ${theme.mainTheme.dark.radio.radioBackgroundColorHover};
+      }
+      .darkmode .radio-active .radio-button-main-theme{
+        --ripple-invert-color: ${theme.mainTheme.dark.rippleColor};
+      }
+      .darkmode .radio-active .radio-button-main-theme .radio-button-circle{
+        border-color: ${theme.mainTheme.dark.color};
+      }
+      .darkmode .radio-active .radio-button-main-theme .radio-button-dot{
+        background-color: ${theme.mainTheme.dark.color};
+      }
+    `
+    head.parentNode.insertBefore(sheet, head.nextSibling);
+  } else if(sheet !== null){
+    sheet.innerHTML = `
+      :root{
+        --main-theme-ripple-color: ${theme.mainTheme.light.rippleColor};
+        --second-theme-ripple-color: ${theme.secondTheme.light.rippleColor};
+        --main-theme-ripple-invert-color: ${theme.mainTheme.light.rippleInvertColor};
+        --second-theme-ripple-invert-color: ${theme.secondTheme.light.rippleInvertColor};
+        --main-theme-ripple-default-color: ${theme.mainTheme.light.rippleDefaultColor};
+        --second-theme-ripple-default-color: ${theme.secondTheme.light.rippleDefaultColor};
+        --navBar: ${theme.mainTheme.light.color};
+        --inputColor: ${theme.mainTheme.light.color};
+      }
+      .darkmode{
+        --main-theme-ripple-color: ${theme.mainTheme.dark.rippleColor};
+        --second-theme-ripple-color: ${theme.secondTheme.dark.rippleColor};
+        --main-theme-ripple-invert-color: ${theme.mainTheme.dark.rippleInvertColor};
+        --second-theme-ripple-invert-color: ${theme.secondTheme.dark.rippleInvertColor};
+        --main-theme-ripple-default-color: ${theme.mainTheme.dark.rippleDefaultColor};
+        --second-theme-ripple-default-color: ${theme.secondTheme.dark.rippleDefaultColor};
+        --inputColor: ${theme.mainTheme.dark.color};
+      }
+
+      .button-main-theme-none{
+        color: ${theme.mainTheme.light.color};
+      }
+      .button-main-theme-none:hover{
+        background-color: ${theme.mainTheme.light.button.buttonBackgroundColorHover};
+      }
+      .darkmode .button-main-theme-none{
+        color: ${theme.mainTheme.dark.color};
+      }
+      .darkmode .button-main-theme-none:hover{
+        background-color: ${theme.mainTheme.dark.button.buttonBackgroundColorHover};
+      }
+      .button-main-theme-outline{
+        color: ${theme.mainTheme.light.color};
+        border-color: ${theme.mainTheme.light.button.buttonBorderColor};
+      }
+      .button-main-theme-outline:hover{
+        background-color: ${theme.mainTheme.light.button.buttonBackgroundColorHover};
+        border-color: ${theme.mainTheme.light.color};
+      }
+      .darkmode .button-main-theme-outline{
+        color: ${theme.mainTheme.dark.color};
+        border-color: ${theme.mainTheme.dark.button.buttonBorderColor};
+      }
+      .darkmode .button-main-theme-outline:hover{
+        background-color: ${theme.mainTheme.dark.button.buttonBackgroundColorHover};
+        border-color: ${theme.mainTheme.dark.color};
+      }
+      .button-main-theme-box{
+        color: ${theme.mainTheme.light.button.buttonBoxFontColor};
+        background-color: ${theme.mainTheme.light.color};
+      }
+      .button-main-theme-box:hover{
+        background-color: ${theme.mainTheme.light.button.buttonBoxBackgroundColorHover};
+      }
+      .darkmode .button-main-theme-box{
+        color: ${theme.mainTheme.dark.button.buttonBoxFontColor};
+        background-color: ${theme.mainTheme.dark.color};
+      }
+      .darkmode .button-main-theme-box:hover{
+        background-color: ${theme.mainTheme.dark.button.buttonBoxBackgroundColorHover};
+      }
+
+      .button-icon-main-theme{
+        color: ${theme.mainTheme.light.iconButton.iconButtonColor}
+      }
+      .button-icon-main-theme:hover{
+        background-color: ${theme.mainTheme.light.iconButton.iconButtonHover}
+      }
+      .darkmode .button-icon-main-theme{
+        color: ${theme.mainTheme.dark.iconButton.iconButtonColor}
+      }
+      .darkmode .button-icon-main-theme:hover{
+        background-color: ${theme.mainTheme.dark.iconButton.iconButtonHover}
+      }
+
+      .button-icon-default-main-theme{
+        color: ${theme.mainTheme.light.iconButtonDefault.iconButtonColor};  
+      }
+      .button-icon-default-main-theme:hover{
+        background-color: ${theme.mainTheme.light.iconButtonDefault.iconButtonHover};  
+      }
+      .darkmode .button-icon-default-main-theme{
+        color: ${theme.mainTheme.dark.iconButtonDefault.iconButtonColor};  
+      }
+      .darkmode .button-icon-default-main-theme:hover{
+        background-color: ${theme.mainTheme.dark.iconButtonDefault.iconButtonHover};  
+      }
+
+      .switch-main-theme .switch-active{
+        --ripple-invert-color: ${theme.mainTheme.light.rippleColor}
+      }
+      .switch-main-theme .switch-active .switch-head{
+        background-color: ${theme.mainTheme.light.switch.switchColor};
+      }
+      .switch-main-theme .switch-active:hover .switch-head-container{
+        background-color: ${theme.mainTheme.light.switch.switchHoverColor};
+      }
+      .darkmode .switch-main-theme .switch-active{
+        --ripple-invert-color: ${theme.mainTheme.dark.rippleColor}
+      }
+      .darkmode .switch-main-theme .switch-active .switch-head{
+        background-color: ${theme.mainTheme.dark.switch.switchColor};
+      }
+      .darkmode .switch-main-theme .switch-active:hover .switch-head-container{
+        background-color: ${theme.mainTheme.dark.switch.switchHoverColor};
+      }
+
+      .radio-button-main-theme:hover{
+        background-color: ${theme.mainTheme.light.radio.radioBackgroundColorHover};
+      }
+      .radio-active .radio-button-main-theme{
+        --ripple-invert-color: ${theme.mainTheme.light.rippleColor};
+      }
+      .radio-active .radio-button-main-theme .radio-button-circle{
+        border-color: ${theme.mainTheme.light.color};
+      }
+      .radio-active .radio-button-main-theme .radio-button-dot{
+        background-color: ${theme.mainTheme.light.color};
+      }
+      .darkmode .radio-button-main-theme:hover{
+        background-color: ${theme.mainTheme.dark.radio.radioBackgroundColorHover};
+      }
+      .darkmode .radio-active .radio-button-main-theme{
+        --ripple-invert-color: ${theme.mainTheme.dark.rippleColor};
+      }
+      .darkmode .radio-active .radio-button-main-theme .radio-button-circle{
+        border-color: ${theme.mainTheme.dark.color};
+      }
+      .darkmode .radio-active .radio-button-main-theme .radio-button-dot{
+        background-color: ${theme.mainTheme.dark.color};
+      }
+    `
+  }
+}
+//CALL CAHNGES TO THEME HERE
+/*
+  Example:
+  theme.mainTheme.light.color = 'blue';
+  themeConstructor(theme);
+*/
+const themeChangerButton = document.querySelector('#themeChangerBtn');
+themeChangerButton.addEventListener('click', e => {
+  theme.mainTheme.light.rippleColor = 'rgb(76, 175, 80)';
+  theme.mainTheme.light.rippleInvertColor = 'rgb(0, 0, 0)';
+  theme.mainTheme.light.color = '#4caf50';
+  theme.mainTheme.light.button.buttonBorderColor = 'rgba(76, 175, 80, 0.5)';
+  theme.mainTheme.light.button.buttonBoxBackgroundColorHover = 'rgb(53, 122, 56)';
+  theme.mainTheme.light.button.buttonBoxFontColor = 'rgba(0, 0, 0, 0.87)';
+  theme.mainTheme.light.button.buttonBackgroundColorHover = 'rgba(76, 175, 80, 0.08)';
+  theme.mainTheme.light.iconButton.iconButtonColor = 'rgb(76, 175, 80)';
+  theme.mainTheme.light.iconButton.iconButtonHover = 'rgba(76, 175, 80, 0.08)';
+  theme.mainTheme.light.radio.radioBackgroundColorHover = 'rgba(76, 175, 80, 0.08)';
+  theme.mainTheme.light.iconButtonDefault.iconButtonColor = 'rgba(0, 0, 0, 0.87)';
+  theme.mainTheme.light.rippleDefaultColor = 'rgba(0, 0, 0)';
+  themeConstructor(theme);
+});
+
 const darkmode = () => {
   const body = document.querySelector("body");
   body.classList.toggle("darkmode");
@@ -97,11 +495,10 @@ const allInput = document.querySelectorAll('.input-underline, .input-outline, .i
   });
 });*/
 
-const allMenus = document.querySelectorAll('.menu-btn');
-[...allMenus].forEach(menu => {
-  menu.addEventListener('click', e => {
+document.addEventListener('mouseup', e => {
+  if(e.target.classList.contains('menu-btn')){
     openMenu(e.target);
-  });
+  }
 });
 const openMenu = function(target) {
   const allActiveMenus = document.querySelectorAll('.show-menu');
@@ -117,7 +514,7 @@ const openMenu = function(target) {
   if(screen.height < (botOffset)){
     if(target.matches('.menu-ontop')){
       menu.style.removeProperty('top');
-      menu.style.setProperty('bottom', '0%');
+      menu.style.setProperty('bottom', '-8px');
     } else{
       menu.style.removeProperty('top');
       menu.style.setProperty('bottom', '100%');
@@ -125,7 +522,7 @@ const openMenu = function(target) {
   } else{
     if(target.matches('.menu-ontop')){
       menu.style.removeProperty('bottom');
-      menu.style.setProperty('top', '0%');
+      menu.style.setProperty('top', '-8px');
     } else{
       menu.style.removeProperty('bottom');
       menu.style.setProperty('top', '100%');
@@ -136,12 +533,40 @@ const closeMenu = function(target) {
   const menu = target.parentNode;
   menu.classList.toggle("show-menu");
 }
+
+const allSelects = document.querySelectorAll('.select');
+[...allSelects].forEach(select => {
+  const selectBtn = select.querySelector('.select-btn');
+  const selectMenu = select.querySelector('.select-menu');
+  selectBtn.addEventListener('click', e => {
+    selectMenu.classList.toggle('show-select-menu');
+  });
+  selectBtn.style.maxWidth = selectMenu.offsetWidth + 'px';
+  if(selectBtn.classList.contains('input-underline-box')){
+    selectMenu.style.top = 3 - (36*0) + 'px'
+    selectBtn.querySelector('input').style.maxWidth = selectMenu.offsetWidth + 'px';
+  } else if(selectBtn.classList.contains('input-outline-box')){
+    selectMenu.style.top = 8 - (36*0) + 'px'
+    selectBtn.querySelector('input').style.maxWidth = selectMenu.offsetWidth-20 + 'px';
+  } else if(selectBtn.classList.contains('input-filled-box')){
+    selectMenu.style.top = 12 - (36*0) + 'px'
+    selectBtn.querySelector('input').style.maxWidth = selectMenu.offsetWidth + 'px';
+  }
+});
+
+const closeSelect = (el) => {
+  el.parentElement.classList.remove('show-select-menu');
+}
+
 let menu = undefined;
 window.addEventListener('click', event => {
   var menuParent = getClosest(event.target, '.menu-btn, .menu-box');
+  var modalParentContainer = getClosest(event.target, '.modal-container');
   var modalParent = getClosest(event.target, '.modal, .modal-btn');
   var dateSelector = getClosest(event.target, '.calendar-box, .select-date-box');
   var drawer = getClosest(event.target, '.drawer-content, button');
+  var drawerContainer = getClosest(event.target, '.drawer, button');
+  var selectParent = getClosest(event.target, '.select-btn, .select');
   if(menuParent == null){
     var menus = document.getElementsByClassName("menu-box");
     var i;
@@ -179,6 +604,11 @@ window.addEventListener('click', event => {
       }
     }
   }
+  if(modalParentContainer){
+    if(modalParent == null){
+      document.querySelector('body').classList.remove('no-scroll');
+    }
+  }
   if(modalParent == null){
     var modalContainers = document.getElementsByClassName("modal-container");
     var i;
@@ -207,6 +637,11 @@ window.addEventListener('click', event => {
       }
     }
   }
+  if(drawerContainer !== null){
+    if(drawer == null){
+      document.querySelector('body').classList.remove('no-scroll');
+    }
+  }
   if(drawer == null){
     var drawer = document.getElementsByClassName("drawer");
     var i;
@@ -216,7 +651,16 @@ window.addEventListener('click', event => {
         openDrawer.classList.remove('show-drawer');
       }
     }
-    document.querySelector('body').classList.remove('no-scroll')
+  }
+  if(selectParent == null){
+    var selectMenus = document.getElementsByClassName('select-menu');
+    var i;
+    for (i = 0; i < selectMenus.length; i++) {
+      var openSelectMenu = selectMenus[i];
+      if (openSelectMenu.classList.contains('show-select-menu')) {
+        openSelectMenu.classList.remove('show-select-menu');
+      }
+    }
   }
 });
 
@@ -279,8 +723,6 @@ const allCalendarBoxes = document.querySelectorAll('.calendar-box');
         tbl.children[i].children[j].classList.remove('numbers-row-item-disabled');
         tbl.children[i].children[j].classList.remove('numbers-row-item-active');
         tbl.children[i].children[j].classList.remove('numbers-row-item-today');
-        tbl.children[i].children[j].classList.remove('ripple-white');
-        tbl.children[i].children[j].classList.add('ripple-black');
         tbl.children[i].children[j].id = '';
         tbl.children[i].children[j].childNodes[0].nodeValue = '';
         tbl.children[i].children[j].style = 'box-shadow: 0';
@@ -316,13 +758,9 @@ const allCalendarBoxes = document.querySelectorAll('.calendar-box');
             for (i = 0; i < allCalendarCells.length; i++){
               if(allCalendarCells[i] !== e.target){
                 allCalendarCells[i].classList.remove('numbers-row-item-active');
-                allCalendarCells[i].classList.add('ripple-invert');
-                allCalendarCells[i].classList.remove('ripple-invert-alt');
                 allCalendarCells[i].style = 'box-shadow: 0';
               }
             }
-            e.target.classList.add('ripple-invert-alt');
-            e.target.classList.remove('ripple-invert');
             e.target.classList.add('numbers-row-item-active');
 
             const dateSelectorBox = getClosest(e.target, '.date-selector');
@@ -336,61 +774,6 @@ const allCalendarBoxes = document.querySelectorAll('.calendar-box');
         }
       }
     }
-
-    /*
-    tbl.innerHTML = "";
-
-    let date = 1;
-    for (let i = 0; i < 6; i++) {
-
-        let row = document.createElement("div");
-        row.className = 'numbers-row';
-
-        for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < firstDay) {
-                cell = document.createElement("span");
-                cell.className = 'numbers-row-item numbers-row-item-disabled';
-                cellText = document.createTextNode("");
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            }
-            else if (date > daysInMonth(month, year)) {
-                break;
-            }
-
-            else {
-                cell = document.createElement("span");
-                cell.className = 'numbers-row-item ripple-center';
-                let dayNumber = date;
-                if(dayNumber < 10){
-                  dayNumber = 0 + '' + dayNumber;
-                }
-                let monthNumber = currentMonth + 1;
-                if(monthNumber < 10){
-                  monthNumber = 0 + '' + monthNumber;
-                }
-                cell.id = dayNumber + '' + monthNumber + '' + year;
-                cellText = document.createTextNode(date);
-                cellRipple = document.createElement("span");
-                cellRipple.classList = 'ripple-box';
-                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    cell.classList.add("numbers-row-item-today");
-                } // color today's date
-                cell.addEventListener('click', e => {
-                  updateCalendarCells(e);
-                });
-                cell.appendChild(cellRipple);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-                date++;
-            }
-
-
-        }
-
-        tbl.appendChild(row);
-    }*/
-
   }
 
   function daysInMonth(iMonth, iYear) {
@@ -447,97 +830,83 @@ const showToast = (txt) => {
     }, 300);
 }
 
-const toastOkBtn = document.querySelector('.toast-ok');
-toastOkBtn.addEventListener('click', e => {
+const allToastOkBtn = document.querySelectorAll('.toast-ok');
+[...allToastOkBtn].forEach(toastOkBtn => {
+  toastOkBtn.addEventListener('click', e => {
     const toast = document.querySelector('.toast');
     toast.classList.remove('show-toast');
     clearTimeout(toastAnimationTimeout);
     clearTimeout(toastTimeout);
+  });
 });
-
 
 //WIP: dynamic ripple color
-const buttons = document.querySelectorAll('.ripple');
 let rippleId = undefined;
-
-[...buttons].forEach(button => {
-  button.onmousedown = function ripple(e) {
-
-    const x = e.offsetX
-    const y = e.offsetY
-    const width = this.offsetWidth;
-    const height = this.offsetHeight;
+document.addEventListener('mousedown', e => {
+  if(e.target.classList.contains('ripple')){
+    const button = e.target;
+    const x = e.offsetX;
+    const y = e.offsetY;
+    const width = button.offsetWidth;
+    const height = button.offsetHeight;
 
     const ripple = document.createElement('span');
+    const rippleChild = document.createElement('span');
 
-    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-invert', 'ripple-invert-alt'];
+    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-invert', 'ripple-invert-alt', 'ripple-main-theme', 'ripple-second-theme', 'ripple-invert-main-theme', 'ripple-invert-second-theme', 'ripple-default-main-theme', 'ripple-default-second-theme'];
     for(let i = 0; i < rippleColors.length; i++){
-      if(button.classList.contains(rippleColors[i]) && document.querySelector('body').classList.contains('darkmode')){
+      if(button.classList.contains(rippleColors[i])){
         switch(rippleColors[i]){
           case 'ripple-blue':
-            ripple.style.setProperty('--rippleColor', 'rgba(144, 202, 249, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(144, 202, 249, 0.1)');
+            rippleChild.style.setProperty('--rippleColor', 'var(--ripple-blue-color)');
             break;
           case 'ripple-white':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
+            rippleChild.style.setProperty('--rippleColor', 'var(--ripple-white-color)');
             break;
           case 'ripple-grey':
-            ripple.style.setProperty('--rippleColor', 'rgba(125, 125, 125, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(125, 125, 125, 0.1)');
+            rippleChild.style.setProperty('--rippleColor', 'var(--ripple-grey-color)');
             break;
           case 'ripple-black':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            rippleChild.style.setProperty('--rippleColor', 'var(--ripple-black-color)');
             break;
           case 'ripple-invert':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
+            rippleChild.style.setProperty('--rippleColor', 'var(--ripple-invert-color)');
             break;
           case 'ripple-invert-alt':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+            rippleChild.style.setProperty('--rippleColor', 'var(--ripple-invert-alt-color)');
             break;
-        }
-      } else if(button.classList.contains(rippleColors[i]) && !document.querySelector('body').classList.contains('darkmode')){
-        switch(rippleColors[i]){
-          case 'ripple-blue':
-            ripple.style.setProperty('--rippleColor', 'rgba(25, 118, 210, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(25, 118, 210, 0.1)');
+          case 'ripple-main-theme':
+            rippleChild.style.setProperty('--rippleColor', 'var(--main-theme-ripple-color)');
             break;
-          case 'ripple-white':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
+          case 'ripple-second-theme':
+            rippleChild.style.setProperty('--rippleColor', 'var(--second-theme-ripple-color)');
             break;
-          case 'ripple-grey':
-            ripple.style.setProperty('--rippleColor', 'rgba(125, 125, 125, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(125, 125, 125, 0.1)');
+          case 'ripple-invert-main-theme':
+            rippleChild.style.setProperty('--rippleColor', 'var(--main-theme-ripple-invert-color)');
             break;
-          case 'ripple-black':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+          case 'ripple-invert-second-theme':
+            rippleChild.style.setProperty('--rippleColor', 'var(--second-theme-ripple-invert-color)');
             break;
-          case 'ripple-invert':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
+          case 'ripple-default-main-theme':
+            rippleChild.style.setProperty('--rippleColor', 'var(--main-theme-ripple-default-color)');
             break;
-          case 'ripple-invert-alt':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
+          case 'ripple-default-second-theme':
+            rippleChild.style.setProperty('--rippleColor', 'var(--second-theme-ripple-default-color)');
             break;
         }
       }
     }
 
-    ripple.className = 'ripple-effect';
+    rippleChild.className = 'ripple-effect-child';
+    ripple.appendChild(rippleChild);
+
+    ripple.className = 'ripple-effect ripple-effect-visible';
     ripple.id = s4();
     rippleId = ripple.id;
     
     let xOffset = 0;
     let yOffset = 0;
 
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
     if(x >= width/2){
       xOffset = x;
     } else if(x <= width/2){
@@ -551,205 +920,112 @@ let rippleId = undefined;
 
     const rippleLenght = pythagorean(xOffset, yOffset);
 
-    ripple.style.setProperty('--scale', rippleLenght);
+    ripple.style.width = rippleLenght * 2 + 'px';
+    ripple.style.height = rippleLenght * 2 + 'px';
+    ripple.style.left = x - rippleLenght + 'px';
+    ripple.style.top = y - rippleLenght + 'px';
 
-    this.querySelector('.ripple-box').appendChild(ripple);
-  };
-  button.onmouseup = function () {
-    removeRipple(rippleId);
-  }
-  button.onmouseout = function () {
-    removeRipple(rippleId);
-  }
+    button.querySelector('.ripple-box').appendChild(ripple);
+   }
 });
-/*
-const buttonsWhite = document.querySelectorAll('.ripple-white');
-
-[...buttonsWhite].forEach(button => {
-  button.onmousedown = function rippleWhite(e) {
-
-    const x = e.offsetX
-    const y = e.offsetY
-    const width = this.offsetWidth;
-    const height = this.offsetHeight;
-
-    const ripple = document.createElement('span');
-
-    ripple.className = 'ripple-effect-white';
-    ripple.id = s4();
-    rippleId = ripple.id;
-    
-    let xOffset = 0;
-    let yOffset = 0;
-
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    if(x >= width/2){
-      xOffset = x;
-    } else if(x <= width/2){
-      xOffset = width - x;
-    }
-    if(y >= height/2){
-      yOffset = y;
-    } else if(y <= height/2){
-      yOffset = height - y;
-    }
-
-    const rippleLenght = pythagorean(xOffset, yOffset);
-
-    ripple.style.setProperty('--scale', rippleLenght);
-
-    this.querySelector('.ripple-box').appendChild(ripple);
-  };
-  button.onmouseup = function () {
-    removeRipple(rippleId);
-  }
-  button.onmouseout = function () {
-    removeRipple(rippleId);
+document.addEventListener('mouseup', e => {
+  if(e.target.classList.contains('ripple')){
+      removeRipple(rippleId);
+   }
+});
+document.addEventListener('mouseout', e => {
+  if(e.target.classList.contains('ripple')){
+      removeRipple(rippleId);
   }
 });
 
-const buttonsBlue = document.querySelectorAll('.ripple-blue');
+document.addEventListener('mousedown', e => {
+  if(e.target.classList.contains('ripple-center')){
+      const button = e.target;
+      const width = button.offsetWidth;
+      const height = button.offsetHeight;
+      const rippleLenght = Math.max(width/2, height/2); // pythagorean(width/2, height/2); for litt større sirkel
 
-[...buttonsBlue].forEach(button => {
-  button.onmousedown = function rippleBlue(e) {
+      const ripple = document.createElement('span');
+      const rippleChild = document.createElement('span');
 
-    const x = e.offsetX
-    const y = e.offsetY
-    const width = this.offsetWidth;
-    const height = this.offsetHeight;
-
-    const ripple = document.createElement('span');
-
-    ripple.className = 'ripple-effect-blue';
-    ripple.id = s4();
-    rippleId = ripple.id;
-    
-    let xOffset = 0;
-    let yOffset = 0;
-
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    if(x >= width/2){
-      xOffset = x;
-    } else if(x <= width/2){
-      xOffset = width - x;
-    }
-    if(y >= height/2){
-      yOffset = y;
-    } else if(y <= height/2){
-      yOffset = height - y;
-    }
-
-    const rippleLenght = pythagorean(xOffset, yOffset);
-
-    ripple.style.setProperty('--scale', rippleLenght);
-
-    this.querySelector('.ripple-box').appendChild(ripple);
-  };
-  button.onmouseup = function () {
-    removeRipple(rippleId);
-  }
-  button.onmouseout = function () {
-    removeRipple(rippleId);
-  }
-});
-*/
-const buttonsCenter = document.querySelectorAll('.ripple-center');
-
-[...buttonsCenter].forEach(button => {
-  button.onmousedown = function rippleCenter() {
-
-    const width = this.offsetWidth;
-    const height = this.offsetHeight;
-    const rippleLenght = Math.max(width/2, height/2); // pythagorean(width/2, height/2); for litt større sirkel
-
-    const ripple = document.createElement('span');
-
-    let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-invert', 'ripple-invert-alt'];
-    for(let i = 0; i < rippleColors.length; i++){
-      if(button.classList.contains(rippleColors[i]) && document.querySelector('body').classList.contains('darkmode')){
-        switch(rippleColors[i]){
-          case 'ripple-blue':
-            ripple.style.setProperty('--rippleColor', 'rgba(144, 202, 249, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(144, 202, 249, 0.1)');
-            break;
-          case 'ripple-white':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
-            break;
-          case 'ripple-grey':
-            ripple.style.setProperty('--rippleColor', 'rgba(125, 125, 125, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(125, 125, 125, 0.1)');
-            break;
-          case 'ripple-black':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
-            break;
-          case 'ripple-invert':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
-            break;
-          case 'ripple-invert-alt':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
-            break;
-        }
-      } else if(button.classList.contains(rippleColors[i]) && !document.querySelector('body').classList.contains('darkmode')){
-        switch(rippleColors[i]){
-          case 'ripple-blue':
-            ripple.style.setProperty('--rippleColor', 'rgba(25, 118, 210, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(25, 118, 210, 0.1)');
-            break;
-          case 'ripple-white':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
-            break;
-          case 'ripple-grey':
-            ripple.style.setProperty('--rippleColor', 'rgba(125, 125, 125, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(125, 125, 125, 0.1)');
-            break;
-          case 'ripple-black':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
-            break;
-          case 'ripple-invert':
-            ripple.style.setProperty('--rippleColor', 'rgba(0, 0, 0, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(0, 0, 0, 0.1)');
-            break;
-          case 'ripple-invert-alt':
-            ripple.style.setProperty('--rippleColor', 'rgba(255, 255, 255, 0.3)');
-            ripple.style.setProperty('--rippleColorStart', 'rgba(255, 255, 255, 0.1)');
-            break;
+      let rippleColors = ['ripple-blue', 'ripple-white', 'ripple-grey', 'ripple-black', 'ripple-invert', 'ripple-invert-alt', 'ripple-main-theme', 'ripple-second-theme', 'ripple-invert-main-theme', 'ripple-invert-second-theme', 'ripple-default-main-theme', 'ripple-default-second-theme'];
+      for(let i = 0; i < rippleColors.length; i++){
+        if(button.classList.contains(rippleColors[i])){
+          switch(rippleColors[i]){
+            case 'ripple-blue':
+              rippleChild.style.setProperty('--rippleColor', 'var(--ripple-blue-color)');
+              break;
+            case 'ripple-white':
+              rippleChild.style.setProperty('--rippleColor', 'var(--ripple-white-color)');
+              break;
+            case 'ripple-grey':
+              rippleChild.style.setProperty('--rippleColor', 'var(--ripple-grey-color)');
+              break;
+            case 'ripple-black':
+              rippleChild.style.setProperty('--rippleColor', 'var(--ripple-black-color)');
+              break;
+            case 'ripple-invert':
+              rippleChild.style.setProperty('--rippleColor', 'var(--ripple-invert-color)');
+              break;
+            case 'ripple-invert-alt':
+              rippleChild.style.setProperty('--rippleColor', 'var(--ripple-invert-alt-color)');
+              break;
+            case 'ripple-main-theme':
+              rippleChild.style.setProperty('--rippleColor', 'var(--main-theme-ripple-color)');
+              break;
+            case 'ripple-second-theme':
+              rippleChild.style.setProperty('--rippleColor', 'var(--second-theme-ripple-color)');
+              break;
+            case 'ripple-invert-main-theme':
+              rippleChild.style.setProperty('--rippleColor', 'var(--main-theme-ripple-invert-color)');
+              break;
+            case 'ripple-invert-second-theme':
+              rippleChild.style.setProperty('--rippleColor', 'var(--second-theme-ripple-invert-color)');
+              break;
+            case 'ripple-default-main-theme':
+              rippleChild.style.setProperty('--rippleColor', 'var(--main-theme-ripple-default-color)');
+              break;
+            case 'ripple-default-second-theme':
+              rippleChild.style.setProperty('--rippleColor', 'var(--second-theme-ripple-default-color)');
+              break;
+          }
         }
       }
+  
+      rippleChild.className = 'ripple-effect-child';
+      ripple.appendChild(rippleChild);
+  
+      ripple.className = 'ripple-effect ripple-effect-visible';
+      ripple.id = s4();
+      rippleId = ripple.id;
+
+      ripple.style.left = '0';
+      ripple.style.top = '0';
+      ripple.style.width = rippleLenght * 2 + 'px';
+      ripple.style.height = rippleLenght * 2 + 'px';
+
+      button.querySelector('.ripple-box').appendChild(ripple);
     }
-
-    ripple.className = 'ripple-effect';
-    ripple.id = s4();
-    rippleId = ripple.id;
-
-    ripple.style.left = '50%';
-    ripple.style.top = '50%';
-    ripple.style.setProperty('--scale', rippleLenght);
-
-    this.querySelector('.ripple-box').appendChild(ripple);
-
-  };
-  button.onmouseup = function () {
-    removeRipple(rippleId);
-  }
-  button.onmouseout = function () {
-    removeRipple(rippleId);
-  }
+});
+document.addEventListener('mouseup', e => {
+  if(e.target.classList.contains('ripple-center')){
+      removeRipple(rippleId);
+   }
+});
+document.addEventListener('mouseout', e => {
+  if(e.target.classList.contains('ripple-center')){
+      removeRipple(rippleId);
+   }
 });
 
 let oldRipple = undefined
 const removeRipple = (rippleId) => {
   if(rippleId !== oldRipple){
     const elem = document.getElementById(rippleId);
+    const elemChild = elem.querySelector('.ripple-effect-child');
     if(elem){
-      elem.classList.add('ripple-effect-out');
+      elemChild.classList.add('ripple-effect-child-leaving');
       setTimeout(() => {
         elem.parentNode.removeChild(elem);
       }, 550);
@@ -758,124 +1034,81 @@ const removeRipple = (rippleId) => {
   oldRipple = rippleId;
 }
 
-const getDefaultTab = () => {
-  //TODO: Fikse DefaultOffsetLeft så man kan velge defaultTab 
-  const Alltabs = document.querySelectorAll('.tabs');
+const allTabs = document.querySelectorAll('.tabs');
+[...allTabs].forEach(tabs => {
+  const defaultTab = tabs.querySelector('.default-tab');
+  const tabIndicator = tabs.parentElement.lastElementChild;
+  const totalWidth = tabs.offsetWidth;
+  const tabsId = tabs.id;
+  const tabContentContainer = document.querySelector('#' + tabsId + '-content');
+  const tabIndex = [...tabs.children].indexOf(defaultTab);
+  
+  tabContentContainer.children[tabIndex].classList.add('active-content-tab');
 
-  [...Alltabs].forEach(tabs => {
-    let defaultTabNumber = 0; //Når den funker så er default tab values: 0, 1, 2, 3, -> ueandelig
-    //let defaultLeftOffset = 0;
-    const defaultTab = tabs.children[defaultTabNumber]; //TODO: adde mulighet til å sette andre tabs en tab-1 som default
-
-    /*
-    let i = defaultTabNumber - 1;
-    for(i; i > -1; i--){
-      defaultLeftOffset += tabs.children[i].offsetWidth;
-    }
-    console.log(defaultLeftOffset);*/
-    //^v = disse er de samme
-    /*
-    var defaultPrevSiblings = defaultTab.previousElementSibling;
-    for(defaultPrevSiblings; defaultPrevSiblings != null; defaultPrevSiblings = defaultPrevSiblings.previousElementSibling){
-      defaultLeftOffset += defaultPrevSiblings.offsetWidth;
-    };
-    console.log('Default Left: ' + defaultLeftOffset);*/
-
-
-    defaultTab.classList.add('active-tab');
-    const tabIndicator = tabs.parentNode.lastElementChild.firstElementChild;
-    tabIndicator.style.width = defaultTab.offsetWidth + 'px'; //TODO: finne en måte å fikse opp i firstTab.offsetWidth (den er litt for stor basert på lengde)
-    //tabIndicator.style.left = defaultLeftOffset + 'px';
-    const tabsId = tabs.id;
-    const tabsContentContainer = document.querySelector('#' + tabsId + '-content');
-    //tabsContentContainer.firstElementChild.style.display = 'block'; // Gamle metoden: tabs.parentNode.nextElementSibling.firstElementChild.style.display = 'block';
-    tabsContentContainer.firstElementChild.classList.add('active-content-tab');
-  })
-}
-getDefaultTab();
-
-const tabChanger = (tab) => {
-  const tabIndicator = tab.parentNode.parentNode.lastElementChild.firstElementChild;
-  const tabsId = tab.parentNode.id;
-  const tabsContentContainer = document.querySelector('#' + tabsId + '-content'); // gamle metoden: tab.parentNode.parentNode.nextElementSibling; DA KAN MAN IKKE VELGE HVOR TAB-CONTENT SKAL VÆRE
-  const tabs = tab.parentNode;
-
-  const oldContentTab = tabsContentContainer.querySelector('.active-content-tab');
-
-  let currentLeft = 0;
-  currentLeft = tabIndicator.offsetLeft;
-  tab.classList.add('active-tab');
-
+  let prevSiblings = defaultTab.previousElementSibling;
   let leftOffset = 0;
-  let loopCount = 0;
-  let tabIndexNumber = -1
-  const tabWidth = tab.offsetWidth;
-  var prevSiblings = tab.previousElementSibling;
-  for(prevSiblings; prevSiblings != null; prevSiblings = prevSiblings.previousElementSibling){
-    prevSiblings.classList.remove('active-tab');
+  for(prevSiblings; prevSiblings !== null; prevSiblings = prevSiblings.previousElementSibling){
     leftOffset += prevSiblings.offsetWidth;
-    loopCount = loopCount + 1;
-    tabIndexNumber = tabIndexNumber + 1;
-    //tabsContentContainer.children[tabIndexNumber].style.display = 'none';
-    tabsContentContainer.children[tabIndexNumber].classList.remove('active-content-tab');
-  };
-
-  //tabsContentContainer.children[loopCount].style.display = 'block';
-  tabsContentContainer.children[loopCount].classList.add('active-content-tab');
-
-  let rightOffset = 0;
-  let tabIndexNumberFromTop = -1
-  var nextSiblings = tab.nextElementSibling;
-  for(nextSiblings; nextSiblings != null; nextSiblings = nextSiblings.nextElementSibling){
-    nextSiblings.classList.remove('active-tab');
-    rightOffset += nextSiblings.offsetWidth;
-    tabIndexNumberFromTop = tabIndexNumberFromTop + 1;
-    const tabIndexFullNumber = tabIndexNumberFromTop + tabIndexNumber + 2;
-    //tabsContentContainer.children[tabIndexFullNumber].style.display = 'none';
-    tabsContentContainer.children[tabIndexFullNumber].classList.remove('active-content-tab');
-  };
-
-  const tabsChildrenNumber = tabs.childElementCount;
-  let i = 0;
-  for(i; i < tabsChildrenNumber; i++){
-    tabs.children[i].setAttribute( 'onClick', '');
-  }
-
-  //Sliding animation, disable dette hvis du ikke vil ha sliding animation
-  if(currentLeft > leftOffset){
-    tabsContentContainer.children[loopCount].classList.add('tabs-slide-from-left');
-    oldContentTab.classList.add('tabs-slide-out-to-right');
-    setTimeout(() => {
-      tabsContentContainer.children[loopCount].classList.remove('tabs-slide-from-left');
-      oldContentTab.classList.remove('tabs-slide-out-to-right');
-    }, 500);
-  } else if(currentLeft < leftOffset){
-    tabsContentContainer.children[loopCount].classList.add('tabs-slide-from-right');
-    oldContentTab.classList.add('tabs-slide-out-to-left');
-    setTimeout(() => {
-      tabsContentContainer.children[loopCount].classList.remove('tabs-slide-from-right');
-      oldContentTab.classList.remove('tabs-slide-out-to-left');
-    }, 500);
   }
   
-  const totalWidth = leftOffset + rightOffset + tabWidth; //Kan bli nyttig for noe (TotalWidth av alle tabs tilsammen)
+  tabIndicator.style.transform = 'translateX(' + leftOffset + 'px) scaleX(' + defaultTab.offsetWidth/totalWidth + ')'
+  defaultTab.classList.add('active-tab');
 
-  tabIndicator.classList.add('animating-indicator');
-  tabIndicator.style.setProperty('--newLeft', leftOffset + 'px');
-  tabIndicator.style.setProperty('--currentLeft', currentLeft + 'px');
-  tabIndicator.style.setProperty('--newWidth', tabWidth + 'px');
-
-  setTimeout(() => {
-    tabIndicator.style.left = leftOffset + 'px';
-    tabIndicator.style.width = tabWidth + 'px';
-    tabIndicator.classList.remove('animating-indicator');
-    let i = 0;
-    for(i; i < tabsChildrenNumber; i++){
-      tabs.children[i].setAttribute( 'onClick', 'tabChanger(this)');
+  tabContentContainer.children[tabIndex].style.transform = 'translate3d(0%, 0px, 0px)';
+  for(let i = 0; i < tabContentContainer.children.length; i++){
+    if(i < tabIndex){
+      tabContentContainer.children[i].style.transform = 'translate3d(-100%, 0px, 0px)';
+    } else if(i > tabIndex){
+      tabContentContainer.children[i].style.transform = 'translate3d(100%, 0px, 0px)';
     }
-  }, 500);
-}
+  }
+});
 
+const tabChanger = (tab) => {
+  const tabIndicator = tab.parentElement.parentElement.lastElementChild;
+  const totalWidth = tab.parentElement.offsetWidth;
+  const tabsId = tab.parentElement.id;
+  const tabContentContainer = document.querySelector('#' + tabsId + '-content');
+  const tabIndex = [...tab.parentNode.children].indexOf(tab);
+  const currentTabIndex = [...tab.parentNode.children].indexOf(tab.parentElement.querySelector('.active-tab'));
+
+  let prevSiblings = tab.previousElementSibling;
+  let leftOffset = 0;
+  for(prevSiblings; prevSiblings !== null; prevSiblings = prevSiblings.previousElementSibling){
+    leftOffset += prevSiblings.offsetWidth;
+    prevSiblings.classList.remove('active-tab');
+  }
+
+  tabIndicator.style.transform = 'translateX(' + leftOffset + 'px) scaleX(' + tab.offsetWidth/totalWidth + ')';
+  tab.classList.add('active-tab');
+
+  let nextSiblings = tab.nextElementSibling;
+  for(nextSiblings; nextSiblings !== null; nextSiblings = nextSiblings.nextElementSibling){
+    nextSiblings.classList.remove('active-tab');
+  }
+  
+  for(let i = 0; i < tabContentContainer.children.length; i++){
+    tabContentContainer.children[i].classList.remove('active-content-tab');
+    tabContentContainer.children[i].style.transition = 'transform 0ms';
+    tabContentContainer.children[i].style.zIndex = '-1';
+  }
+  tabContentContainer.children[tabIndex].classList.add('active-content-tab');
+  tabContentContainer.children[tabIndex].style.transform = 'translate3d(0%, 0px, 0px)';
+  tabContentContainer.children[tabIndex].style.transition = 'transform 500ms';
+  tabContentContainer.children[currentTabIndex].style.transition = 'transform 500ms';
+  tabContentContainer.children[tabIndex].style.zIndex = '1';
+  tabContentContainer.children[currentTabIndex].style.zIndex = '1';
+  
+  let prevTabContentSiblings = tabContentContainer.children[tabIndex].previousElementSibling;
+  for(prevTabContentSiblings; prevTabContentSiblings !== null; prevTabContentSiblings = prevTabContentSiblings.previousElementSibling){
+    prevTabContentSiblings.style.transform = 'translate3d(-100%, 0px, 0px)';
+  }
+  let nextTabContentSiblings = tabContentContainer.children[tabIndex].nextElementSibling;
+  for(nextTabContentSiblings; nextTabContentSiblings !== null; nextTabContentSiblings = nextTabContentSiblings.nextElementSibling){
+    nextTabContentSiblings.style.transform = 'translate3d(100%, 0px, 0px)';
+  }
+}
+/*
 const ratioButton1 = document.querySelector('.ratio-first-button');
 const ratioButton2 = document.querySelector('.ratio-second-button');
 
@@ -906,7 +1139,7 @@ const changeRatioIndicator = () => {
   const indicatorValue = numberValue1 / totalNumber
   indicator.style.setProperty('--IndicatorValue', indicatorValue);
 }
-
+*/
 const switchHandler = (el) => {
   el.classList.toggle('switch-active');
 }
@@ -919,12 +1152,15 @@ const getSwitchState = (el) => {
 }
 
 const modalHandler = (el, state) => {
+  const elem = document.querySelector('#' + el + '');
   if(state){
-    el.classList.add('show-modal-container');
-    el.firstElementChild.classList.add('show-modal');
+    elem.classList.add('show-modal-container');
+    elem.firstElementChild.classList.add('show-modal');
+    document.querySelector('body').classList.add('no-scroll');
   } else{
-    el.classList.remove('show-modal-container');
-    el.firstElementChild.classList.remove('show-modal');
+    elem.classList.remove('show-modal-container');
+    elem.firstElementChild.classList.remove('show-modal');
+    document.querySelector('body').classList.remove('no-scroll');
   } 
 }
 
@@ -998,3 +1234,52 @@ const drawerHandler = (el) => {
     document.querySelector('body').classList.remove('no-scroll')
   }
 }
+
+const stepperHandler = (el) => {
+  const stepperContent = el.parentElement.parentElement.querySelector('.stepper-content');
+  const currentTab = stepperContent.querySelector('.active-stepper-tab');
+  const currentDot = el.parentElement.querySelector('.active-stepper-dot');
+  const stepperContentWidth = stepperContent.offsetWidth;
+  if(el.classList.contains('stepper-next') && currentTab.nextElementSibling !== null){
+    currentTab.classList.remove('active-stepper-tab');
+    currentTab.nextElementSibling.classList.add('active-stepper-tab');
+    currentDot.classList.remove('active-stepper-dot');
+    currentDot.nextElementSibling.classList.add('active-stepper-dot');
+    let leftOffset = 0;
+    var prevSiblings = currentTab;
+    for(prevSiblings; prevSiblings != null; prevSiblings = prevSiblings.previousElementSibling){
+      leftOffset += prevSiblings.offsetWidth;
+    };
+    const translateAmount = (leftOffset/stepperContentWidth) * 100;
+    stepperContent.style.transform = 'translateX(-' + translateAmount + '%)';
+  } else if(el.classList.contains('stepper-back') && currentTab.previousElementSibling !== null){
+    currentTab.classList.remove('active-stepper-tab');
+    currentTab.previousElementSibling.classList.add('active-stepper-tab');
+    currentDot.classList.remove('active-stepper-dot');
+    currentDot.previousElementSibling.classList.add('active-stepper-dot');
+    let leftOffset = 0;
+    var prevSiblings = currentTab.previousElementSibling.previousElementSibling;
+    for(prevSiblings; prevSiblings != null; prevSiblings = prevSiblings.previousElementSibling){
+      leftOffset += prevSiblings.offsetWidth;
+    };
+    const translateAmount = (leftOffset/stepperContentWidth) * 100;
+    stepperContent.style.transform = 'translateX(-' + translateAmount + '%)';
+  }
+}
+
+document.addEventListener('click', e => {
+  if(e.target.classList.contains('radio-button') || e.target.classList.contains('radio-txt')){
+    const radioBtn = e.target;
+    const radio = radioBtn.parentElement;
+    radio.classList.add('radio-active');
+  }
+  if(e.target.parentElement.parentElement.classList.contains('radio-group')){
+    const radio = e.target.parentElement;
+    for(let i = radio.previousElementSibling; i !== null; i = i.previousElementSibling){
+      i.classList.remove('radio-active');
+    }
+    for(let i = radio.nextElementSibling; i !== null; i = i.nextElementSibling){
+      i.classList.remove('radio-active');
+    }
+  }
+});
